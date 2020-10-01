@@ -1,28 +1,17 @@
 import React, { ReactElement } from 'react';
 
-import styled, { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
-
 interface LayoutProps {
   title: string;
   name: string;
   children: ReactElement;
-  styles: string;
+  styles: ReactElement[];
+  links: ReactElement[];
+  scripts: ReactElement[];
 }
 
-const MainWrapper = styled.main`
-  font-family: 'Manrope', sans-serif;
-`;
-
-const GlobalStyles = createGlobalStyle`
-    ${reset};
-    * {
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-    }
-`;
-
-const Layout: React.FC<LayoutProps> = ({ children, title, name, styles }) => (
+const Layout: React.FC<LayoutProps> = ({
+  children, title, name, styles, scripts, links,
+}) => (
   <html lang="en">
     <head>
       <meta charSet="UTF-8" />
@@ -36,13 +25,12 @@ const Layout: React.FC<LayoutProps> = ({ children, title, name, styles }) => (
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap"
         rel="stylesheet"
       />
+      {links}
       {styles}
     </head>
     <body>
-      <GlobalStyles />
-      <MainWrapper id={`${name}-wrapper`}>{children}</MainWrapper>
-      <script src={`/public/${name}.js`} />
-      <script src={`/public/vendors~${name}.bundle.js`} />
+      <main id={`${name}-wrapper`}>{children}</main>
+      {scripts}
     </body>
   </html>
 );

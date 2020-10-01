@@ -6,11 +6,11 @@ const home: IRouter = Router();
 
 home.get('/', (req, res) => {
   const ssr = new SSR(Home);
-  const home = ssr.render({
+  const homeHTML: string = ssr.render({
     title: 'React component performance',
     name: 'app',
   });
-  res.type('html').send(home);
+  res.type('html').send(homeHTML);
 });
 
 export default home;

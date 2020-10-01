@@ -4,6 +4,7 @@
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 
 const configs = [
     {
@@ -43,7 +44,13 @@ const configs = [
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
-            new BundleAnalyzerPlugin(),
+            // @ts-ignore
+            new LoadablePlugin({
+                writeToDisk: true
+            }),
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false
+            }),
             new webpack.EnvironmentPlugin(process.env)
         ],
     },

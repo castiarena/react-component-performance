@@ -1,10 +1,17 @@
 import { createElement, ReactElement } from 'react';
 import { renderToString } from 'react-dom/server';
+import path from 'path';
+import { ChunkExtractor } from '@loadable/server';
 import { ServerStyleSheet } from 'styled-components';
 import Layout from '../../components/Layout';
 
+const statsFile = path.resolve('./dist/public/loadable-stats.json');
+
 class SSR {
   private sheet = new ServerStyleSheet();
+
+  private extractor = new ChunkExtractor({ statsFile, entrypoints: ['app'] });
+
   private readonly Component: any;
 
   constructor(Component: any) {
@@ -12,21 +19,23 @@ class SSR {
   }
 
   public render(props: any): string {
-    const elementOfComponentToRendered = createElement(this.Component);
-    const propsRendered = {
-      children: elementOfComponentToRendered,
-      ...props,
-    };
+    const elementOfComponentToRendered: ReactElement = createElement(this.Component, props);
 
-    const LayoutElementWithoutCSS: ReactElement = createElement(Layout, propsRendered);
-    renderToString(this.sheet.collectStyles(LayoutElementWithoutCSS));
+    this.sheet.collectStyles(elementOfComponentToRendered);
+    this.extractor.collectChunks(elementOfComponentToRendered);
 
-    const LayoutElementWithCSS: ReactElement = createElement(Layout, {
-      ...propsRendered,
-      styles: this.sheet.getStyleElement(),
-    });
+    const styles: ReactElement[] = this.sheet.getStyleElement();
+    const scripts: ReactElement[] = this.extractor.getScriptElements();
+    const links: ReactElement[] = this.extractor.getLinkElements();
 
-    return renderToString(LayoutElementWithCSS);
+    return renderToString(
+      createElement(Layout, {
+        ...props,
+        styles,
+        scripts,
+        links,
+      }),
+    );
   }
 }
 

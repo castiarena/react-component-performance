@@ -1,19 +1,16 @@
 import express, { Application, IRouter } from 'express';
 import { createServer, Server as HTTPServer } from 'http';
 
-interface IEnvironmentServer {
-  server: IServer;
-}
-
 interface IServer {
   route(path: string, route: IRouter): IServer;
   use(something: any): IServer;
   statics(path: string): IServer;
-  listen(port: number | string, callback: (port: number) => void): IServer;
+  listen(port: number | string, callback: (runningPort: number) => void): IServer;
 }
 
 class Server implements IServer {
   private app: Application;
+
   private readonly httpServer: HTTPServer;
 
   private readonly DEFAULT_PORT = 5000;
@@ -33,7 +30,7 @@ class Server implements IServer {
     return this;
   }
 
-  public listen(port = this.DEFAULT_PORT, callback: (port: number) => void): IServer {
+  public listen(port = this.DEFAULT_PORT, callback: (runningPort: number) => void): IServer {
     this.httpServer.listen(port, () => callback(port));
     return this;
   }
@@ -43,12 +40,12 @@ class Server implements IServer {
     return this;
   }
 
-  public static environmentDispatcher(env: string): IEnvironmentServer {
-    console.log(env);
+  public static environmentDispatcher(env: string): IServer {
     const envName = env.substring(0, 1).toUpperCase() + env.substring(1, env.length).toLowerCase();
+    // eslint-disable-next-line global-require,import/no-dynamic-require
     return require(`../${envName}`);
   }
 }
 
 export default Server;
-export { IServer, IEnvironmentServer };
+export { IServer };
