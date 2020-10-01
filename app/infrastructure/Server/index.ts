@@ -1,6 +1,10 @@
 import express, { Application, IRouter } from 'express';
 import { createServer, Server as HTTPServer } from 'http';
 
+interface ExportServer {
+    server: IServer;
+}
+
 interface IServer {
     route(path: string, route: IRouter): IServer;
     use(something: any): IServer;
@@ -40,7 +44,7 @@ class Server implements IServer {
         return this;
     }
 
-    public static environmentDispatcher(env: string): IServer {
+    public static environmentDispatcher(env: string): ExportServer {
         const envName =
             env.substring(0, 1).toUpperCase() + env.substring(1, env.length).toLowerCase();
         // eslint-disable-next-line global-require,import/no-dynamic-require
@@ -49,4 +53,4 @@ class Server implements IServer {
 }
 
 export default Server;
-export { IServer };
+export { IServer, ExportServer };

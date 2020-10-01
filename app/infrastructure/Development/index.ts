@@ -41,4 +41,5 @@ const server = new Server(app);
 
 server.use(morgan('common'));
 
-export default server;
+// eslint-disable-next-line import/prefer-default-export
+export { server };

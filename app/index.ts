@@ -1,6 +1,6 @@
 import dotEnv from 'dotenv';
 import compression from 'compression';
-import Server, { IServer } from './infrastructure/Server';
+import Server, { ExportServer } from './infrastructure/Server';
 import home from './pages/home';
 
 // load env variables
@@ -8,7 +8,7 @@ dotEnv.config();
 
 // create server instance for environment
 const { NODE_ENV } = process.env;
-const server: IServer = Server.environmentDispatcher(NODE_ENV);
+const { server } : ExportServer = Server.environmentDispatcher(NODE_ENV);
 
 server
     .use(compression())
