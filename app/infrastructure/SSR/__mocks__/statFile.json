@@ -1,0 +1,113 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "d9331d98e1777d265b96",
+  "publicPath": "/public",
+  "outputPath": "/Users/agustin.castiarena/apps/react-component-performance/dist/public",
+  "assetsByChunkName": {
+    "app": [
+      "app.js",
+      "app.js.map"
+    ],
+    "vendors~app": [
+      "vendors~app.bundle.js",
+      "vendors~app.bundle.js.map"
+    ]
+  },
+  "assets": [
+    {
+      "name": "app.js",
+      "size": 3419,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "app"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "app.js.map",
+      "size": 10312,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "app"
+      ],
+      "info": {
+        "development": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "vendors~app.bundle.js",
+      "size": 170140,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "vendors~app"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "vendors~app.bundle.js.map",
+      "size": 426928,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "vendors~app"
+      ],
+      "info": {
+        "development": true
+      },
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "app": {
+      "chunks": [
+        1,
+        0
+      ],
+      "assets": [
+        "vendors~app.bundle.js",
+        "vendors~app.bundle.js.map",
+        "app.js",
+        "app.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "app": {
+      "chunks": [
+        1,
+        0
+      ],
+      "assets": [
+        "vendors~app.bundle.js",
+        "vendors~app.bundle.js.map",
+        "app.js",
+        "app.js.map"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 2,
+      "debug": false
+    }
+  },
+  "children": []
+}

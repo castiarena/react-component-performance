@@ -1,10 +1,9 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
-import Server from '../Server';
 
-const app: Application = express();
-const server = new Server(app);
+const server: Application = express();
 
 server.use(morgan('common'));
 
-export default server;
+// eslint-disable-next-line import/prefer-default-export
+export { server };

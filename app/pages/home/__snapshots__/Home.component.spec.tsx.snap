@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component test suite smoke test, snapshot only  1`] = `
+<DocumentFragment>
+  .c0 {
+  color: white;
+  border: none;
+  background-color: green;
+  border-radius: 12px;
+}
+
+<div>
+    <h1>
+      Hello world
+    </h1>
+    <button
+      class="c0"
+    >
+      Button
+    </button>
+  </div>
+</DocumentFragment>
+`;
