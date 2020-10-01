@@ -9,6 +9,7 @@ home.get('/', (req, res) => {
     const homeHTML: string = ssr.render({
         title: 'React component performance',
         name: 'app',
+        lang: 'en',
     });
     res.type('html').send(homeHTML);
 });

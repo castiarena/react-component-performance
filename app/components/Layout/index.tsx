@@ -3,14 +3,17 @@ import React, { ReactElement, Children, cloneElement } from 'react';
 interface LayoutProps {
     title: string;
     name: string;
+    lang: string;
     children: ReactElement;
     styles: ReactElement[];
     links: ReactElement[];
     scripts: ReactElement[];
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, title, name, styles, scripts, links }) => (
-    <>
+const Layout: React.FC<LayoutProps> = ({
+    children, title, name, styles, scripts, links, lang,
+}) => (
+    <html lang={lang}>
         <head>
             <meta charSet="UTF-8" />
             <meta
@@ -28,11 +31,12 @@ const Layout: React.FC<LayoutProps> = ({ children, title, name, styles, scripts,
         </head>
         <body>
             <main id={`${name}-wrapper`}>{children}</main>
-            {Children.map(scripts,
-                (script) => cloneElement(script, { key: JSON.stringify(script) })
-            )}
+            {
+                Children.map(scripts,
+                    (script) => cloneElement(script, { key: JSON.stringify(script) }))
+            }
         </body>
-    </>
+    </html>
 );
 
 export default Layout;

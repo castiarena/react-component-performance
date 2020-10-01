@@ -1,6 +1,5 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
-import Server from '../Server';
 import webpackDevConfig from '../../../webpack.config';
 
 const dependencies = () => ({
@@ -36,10 +35,9 @@ const configureDevServer = (app: Application) => {
     return app;
 };
 
-const app = configureDevServer(express());
-const server = new Server(app);
+const server = configureDevServer(express());
 
-server.use(morgan('common'));
+server.use(morgan('dev'));
 
 // eslint-disable-next-line import/prefer-default-export
 export { server };
