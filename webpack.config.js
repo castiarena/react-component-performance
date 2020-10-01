@@ -1,19 +1,20 @@
-//@ts-check
+// @ts-check
 
-/** @typedef {import('webpack').Configuration} WebpackConfig **/
+/** @typedef {import('webpack').Configuration} WebpackConfig * */
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 
 const configs = [
     {
         mode: 'development',
         entry: {
             app: [
-                './app/client.tsx'
-            ]
+                './app/client.tsx',
+            ],
         },
         output: {
-            path: __dirname + '/dist/public',
+            path: `${__dirname}/dist/public`,
             filename: '[name].js',
             chunkFilename: '[name].bundle.js',
             publicPath: '/public',
@@ -22,10 +23,10 @@ const configs = [
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
-        
+
         // Source maps support ('inline-source-map' also works)
         devtool: 'source-map',
-    
+
         // Add the loader for .ts files.
         module: {
             rules: [
@@ -38,10 +39,14 @@ const configs = [
         optimization: {
             splitChunks: {
                 chunks: 'all',
-            }
+            },
         },
         plugins: [
-            new webpack.EnvironmentPlugin(process.env)
+            new webpack.EnvironmentPlugin(process.env),
+            // @ts-ignore
+            new LoadablePlugin({
+                writeToDisk: true,
+            }),
         ],
     },
     {
@@ -50,17 +55,17 @@ const configs = [
             server: './app/index.ts',
         },
         output: {
-            path: __dirname + '/dist',
+            path: `${__dirname}/dist`,
             filename: '[name].js',
         },
         // Currently we need to add '.ts' to the resolve.extensions array.
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
-        
+
         // Source maps support ('inline-source-map' also works)
         devtool: 'source-map',
-        
+
         // Add the loader for .ts files.
         module: {
             rules: [

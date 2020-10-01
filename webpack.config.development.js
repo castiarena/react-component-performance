@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const [clientWebpackConfig, serverWebpackConfig] = require('./webpack.config');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const LoadablePlugin = require('@loadable/webpack-plugin');
 
 const configs = [
     {
@@ -9,14 +8,11 @@ const configs = [
         mode: 'production',
         plugins: [
             new webpack.IgnorePlugin({
-                resourceRegExp: /^\.\/Production$/
+                resourceRegExp: /^\.\/Production$/,
             }),
             new webpack.HotModuleReplacementPlugin(),
-            new LoadablePlugin({
-                writeToDisk: true
-            }),
             new BundleAnalyzerPlugin({
-                openAnalyzer: false
+                openAnalyzer: false,
             }),
         ],
     },
