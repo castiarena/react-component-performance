@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, Children, cloneElement } from 'react';
 
 interface LayoutProps {
     title: string;
@@ -10,7 +10,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, title, name, styles, scripts, links }) => (
-    <html lang="en">
+    <>
         <head>
             <meta charSet="UTF-8" />
             <meta
@@ -23,14 +23,16 @@ const Layout: React.FC<LayoutProps> = ({ children, title, name, styles, scripts,
                 href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap"
                 rel="stylesheet"
             />
-            {links}
-            {styles}
+            {Children.map(links, (link) => cloneElement(link, { key: JSON.stringify(link) }))}
+            {Children.map(styles, (style) => cloneElement(style, { key: JSON.stringify(style) }))}
         </head>
         <body>
             <main id={`${name}-wrapper`}>{children}</main>
-            {scripts}
+            {Children.map(scripts,
+                (script) => cloneElement(script, { key: JSON.stringify(script) })
+            )}
         </body>
-    </html>
+    </>
 );
 
 export default Layout;

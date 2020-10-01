@@ -2,7 +2,8 @@
     "env": {
         "browser": true,
         "es2020": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -36,6 +37,8 @@
         "no-use-before-define": "off",
         "indent" : ["error", 4],
         "react/jsx-indent" : ["error", 4],
+        "react/jsx-indent-props" : ["error", 4],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "import/extensions": [
             "error",
             "ignorePackages",

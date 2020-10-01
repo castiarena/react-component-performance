@@ -34,7 +34,7 @@ class SSR {
                 styles,
                 scripts,
                 links,
-            })
+            }),
         );
     }
 }

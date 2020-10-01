@@ -8,7 +8,7 @@ dotEnv.config();
 
 // create server instance for environment
 const { NODE_ENV } = process.env;
-const { server } : ExportServer = Server.environmentDispatcher(NODE_ENV);
+const { server }: ExportServer = Server.environmentDispatcher(NODE_ENV);
 
 server
     .use(compression())

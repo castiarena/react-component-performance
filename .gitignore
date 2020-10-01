@@ -16,3 +16,6 @@ docker-compose.yml
 
 # prodcution
 dist
+
+# testing
+coverage
