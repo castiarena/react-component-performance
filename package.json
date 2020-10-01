@@ -75,10 +75,10 @@
   "license": "MIT",
   "husky": {
     "hooks": {
-      "pre-commit": "npx lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "app/**/*.ts{,x}": "prettier --write --ignore-unknown"
+    "app/**/*.ts{,x}": "tsc --noEmit && eslint app/**/*.ts{,x} && prettier --write --ignore-unknown"
   }
 }
