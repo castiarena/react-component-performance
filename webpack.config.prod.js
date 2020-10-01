@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const [clientWebpackConfig, serverWebpackConfig] = require('./webpack.config');
 const CompressionPlugin = require('compression-webpack-plugin');
 
@@ -19,6 +20,11 @@ const configs = [
     {
         ...serverWebpackConfig,
         mode: 'production',
+        plugins: [
+            new webpack.IgnorePlugin({
+                resourceRegExp: /Development/
+            }),
+        ],
     },
 ];
 
