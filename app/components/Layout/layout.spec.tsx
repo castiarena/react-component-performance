@@ -11,7 +11,14 @@ describe('Layout test cases', () => {
         const links = [<link />];
 
         const html = renderToString(
-            <Layout title={title} name={moduleName} styles={styles} links={links} scripts={scripts}>
+            <Layout
+                lang="en"
+                title={title}
+                name={moduleName}
+                styles={styles}
+                links={links}
+                scripts={scripts}
+            >
                 <p>some child mocked</p>
             </Layout>,
         );
