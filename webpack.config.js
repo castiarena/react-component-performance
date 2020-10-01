@@ -9,8 +9,8 @@ const configs = [
     {
         mode: 'development',
         entry: {
-            home: [
-                './app/modules/home/index.tsx'
+            app: [
+                './app/client.tsx'
             ]
         },
         output: {
@@ -43,13 +43,14 @@ const configs = [
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
-            new BundleAnalyzerPlugin()
+            new BundleAnalyzerPlugin(),
+            new webpack.EnvironmentPlugin(process.env)
         ],
     },
     {
         mode: 'development',
         entry: {
-            server: './app/app.ts',
+            server: './app/index.ts',
         },
         output: {
             path: __dirname + '/dist',
