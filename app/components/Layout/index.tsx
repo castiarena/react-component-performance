@@ -1,11 +1,12 @@
-import React, { FC } from 'react';
+import React, { ReactElement } from 'react';
+
 import styled, { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
 interface LayoutProps {
   title: string;
   name: string;
-  children: React.ReactElement;
+  children: ReactElement;
   styles: string;
 }
 
@@ -21,8 +22,8 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-const Layout: FC<LayoutProps> = ({ children, title, name, styles }) => (
-  <html>
+const Layout: React.FC<LayoutProps> = ({ children, title, name, styles }) => (
+  <html lang="en">
     <head>
       <meta charSet="UTF-8" />
       <meta
