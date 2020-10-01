@@ -79,6 +79,10 @@
     }
   },
   "lint-staged": {
-    "app/**/*.ts{,x}": "tsc --noEmit && eslint app/**/*.ts{,x} && prettier --write --ignore-unknown"
+    "app/**/*.ts{,x}": [
+      "tsc --noEmit",
+      "eslint --fix",
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
