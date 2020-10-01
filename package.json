@@ -11,7 +11,9 @@
     "start:dev": "nodemon -r ts-node app/index.ts",
     "build": "webpack --config webpack.config.prod.js",
     "build:dev": "webpack --config webpack.config.js",
-    "lint": "tsc --noEmit && eslint app/**/*.ts{,x}"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint app/**/*.ts{,x}",
+    "format": "prettier --write --ignore-unknown app/**/*.ts{,x}"
   },
   "dependencies": {
     "@babel/plugin-transform-typescript": "7.11.0",
@@ -89,8 +91,9 @@
   },
   "lint-staged": {
     "app/**/*.ts{,x}": [
-      "prettier --write --ignore-unknown",
-      "eslint --fix"
+      "bash -t tsc --noEmit",
+      "bash -t prettier --write --ignore-unknown",
+      "bash -t eslint --fix"
     ]
   }
 }

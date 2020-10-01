@@ -4,7 +4,7 @@ import reset from 'styled-reset';
 import Home from './pages/home/Home';
 
 const MainWrapper = styled.div`
-  font-family: 'Manrope', sans-serif;
+    font-family: 'Manrope', sans-serif;
 `;
 
 const GlobalStyles = createGlobalStyle`
@@ -16,10 +16,10 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const App: React.FC = () => (
-  <MainWrapper>
-    <GlobalStyles />
-    <Home />
-  </MainWrapper>
+    <MainWrapper>
+        <GlobalStyles />
+        <Home />
+    </MainWrapper>
 );
 
 export default App;

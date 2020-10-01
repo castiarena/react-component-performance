@@ -11,9 +11,10 @@ const { NODE_ENV } = process.env;
 const server: IServer = Server.environmentDispatcher(NODE_ENV);
 
 server
-  .use(compression())
-  .statics('dist')
-  .route('/', home)
-  .listen(process.env.PORT, (PORT: number) =>
-    // eslint-disable-next-line no-console,implicit-arrow-linebreak
-    console.log('\x1b[36m%s\x1b[0m', `App running at on ${PORT}`));
+    .use(compression())
+    .statics('dist')
+    .route('/', home)
+    .listen(process.env.PORT, (PORT: number) =>
+        // eslint-disable-next-line no-console,implicit-arrow-linebreak
+        console.log('\x1b[36m%s\x1b[0m', `App running at on ${PORT}`)
+    );

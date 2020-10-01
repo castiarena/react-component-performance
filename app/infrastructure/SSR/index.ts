@@ -8,35 +8,35 @@ import Layout from '../../components/Layout';
 const statsFile = path.resolve('./dist/public/loadable-stats.json');
 
 class SSR {
-  private sheet = new ServerStyleSheet();
+    private sheet = new ServerStyleSheet();
 
-  private extractor = new ChunkExtractor({ statsFile, entrypoints: ['app'] });
+    private extractor = new ChunkExtractor({ statsFile, entrypoints: ['app'] });
 
-  private readonly Component: any;
+    private readonly Component: any;
 
-  constructor(Component: any) {
-    this.Component = Component;
-  }
+    constructor(Component: any) {
+        this.Component = Component;
+    }
 
-  public render(props: any): string {
-    const elementOfComponentToRendered: ReactElement = createElement(this.Component, props);
+    public render(props: any): string {
+        const elementOfComponentToRendered: ReactElement = createElement(this.Component, props);
 
-    this.sheet.collectStyles(elementOfComponentToRendered);
-    this.extractor.collectChunks(elementOfComponentToRendered);
+        this.sheet.collectStyles(elementOfComponentToRendered);
+        this.extractor.collectChunks(elementOfComponentToRendered);
 
-    const styles: ReactElement[] = this.sheet.getStyleElement();
-    const scripts: ReactElement[] = this.extractor.getScriptElements();
-    const links: ReactElement[] = this.extractor.getLinkElements();
+        const styles: ReactElement[] = this.sheet.getStyleElement();
+        const scripts: ReactElement[] = this.extractor.getScriptElements();
+        const links: ReactElement[] = this.extractor.getLinkElements();
 
-    return renderToString(
-      createElement(Layout, {
-        ...props,
-        styles,
-        scripts,
-        links,
-      }),
-    );
-  }
+        return renderToString(
+            createElement(Layout, {
+                ...props,
+                styles,
+                scripts,
+                links,
+            })
+        );
+    }
 }
 
 export default SSR;

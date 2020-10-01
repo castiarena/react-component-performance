@@ -8,9 +8,9 @@ const renderMethod = module.hot ? hydrate : render;
 renderMethod(<App />, wrapper);
 
 if (module.hot) {
-  module.hot.accept();
-  module.hot.addStatusHandler((status) => {
-    // eslint-disable-next-line no-console
-    if (status === 'prepare') console.clear();
-  });
+    module.hot.accept();
+    module.hot.addStatusHandler((status) => {
+        // eslint-disable-next-line no-console
+        if (status === 'prepare') console.clear();
+    });
 }

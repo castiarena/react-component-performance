@@ -5,12 +5,12 @@ import SSR from '../../infrastructure/SSR';
 const home: IRouter = Router();
 
 home.get('/', (req, res) => {
-  const ssr = new SSR(Home);
-  const homeHTML: string = ssr.render({
-    title: 'React component performance',
-    name: 'app',
-  });
-  res.type('html').send(homeHTML);
+    const ssr = new SSR(Home);
+    const homeHTML: string = ssr.render({
+        title: 'React component performance',
+        name: 'app',
+    });
+    res.type('html').send(homeHTML);
 });
 
 export default home;
