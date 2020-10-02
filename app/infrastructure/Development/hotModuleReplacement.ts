@@ -8,13 +8,15 @@ interface IModule {
     hot?: HotModule,
 }
 
-export default (mod: IModule) => {
+export default (mod: IModule): boolean => {
     if (!mod.hot) {
-        return;
+        return false;
     }
     mod.hot.accept();
     mod.hot.addStatusHandler((status) => {
         // eslint-disable-next-line no-console
         if (status === 'prepare') console.clear();
     });
+
+    return true;
 };
