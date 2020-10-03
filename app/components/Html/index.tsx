@@ -1,16 +1,19 @@
 import React, { ReactElement, Children, cloneElement } from 'react';
 
-interface LayoutProps {
+export interface HtmlProps {
     title: string;
     name: string;
     lang: string;
+}
+
+interface HtmlElementProps extends HtmlProps{
     children: ReactElement;
     styles: ReactElement[];
     links: ReactElement[];
     scripts: ReactElement[];
 }
 
-const Layout: React.FC<LayoutProps> = ({
+const Html: React.FC<HtmlElementProps> = ({
     children, title, name, styles, scripts, links, lang,
 }) => (
     <html lang={lang}>
@@ -39,4 +42,4 @@ const Layout: React.FC<LayoutProps> = ({
     </html>
 );
 
-export default Layout;
+export default Html;

@@ -1,19 +1,30 @@
 import { DefaultTheme } from 'styled-components';
 
 const theme: DefaultTheme = {
-    borderRadius: '4px',
+    borderRadius: {
+        small: '12px',
+        medium: '18px',
+        large: '24px',
+    },
+    spacing: {
+        small: '16px',
+        medium: '26px',
+        large: '30px',
+    },
     palette: {
         common: {
             black: '#222831',
-            white: '#ffffff',
+            white: '#fff',
         },
         primary: {
             main: '#726a95',
-            contrast: '#000',
+            hover: '#8d83b8',
+            contrast: '#fff',
         },
         secondary: {
             main: '#709fb0',
-            contrast: '#ffffff',
+            hover: '#84bcd0',
+            contrast: '#fff',
         },
     },
 };

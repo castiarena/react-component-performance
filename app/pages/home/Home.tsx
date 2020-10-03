@@ -1,18 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const ButtonStyled = styled.button`
-    color: white;
-    border: none;
-    background-color: green;
-    border-radius: 12px;
-`;
+import Layout from '../../components/Layout';
+import Button from '../../components/Button';
 
 const Home = () => (
-    <div>
-        <h1>Hello world</h1>
-        <ButtonStyled>Button</ButtonStyled>
-    </div>
+    <Layout columns={3} gap={40}>
+        <div>
+            <h1>Hello world</h1>
+            <Button>Button</Button>
+        </div>
+        <div>
+            <h1>Hello world</h1>
+            <Button>Button</Button>
+        </div>
+        <div>
+            <h1>Hello world</h1>
+            <Button>Button</Button>
+        </div>
+        <div>
+            <h1>Hello world</h1>
+            <Button>Button</Button>
+        </div>
+    </Layout>
 );
 
 export default Home;

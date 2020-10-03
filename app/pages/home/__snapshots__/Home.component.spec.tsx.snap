@@ -3,21 +3,73 @@
 exports[`Home component test suite smoke test, snapshot only  1`] = `
 <DocumentFragment>
   .c0 {
-  color: white;
-  border: none;
-  background-color: green;
-  border-radius: 12px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-column-gap: 40px;
+  padding: 40px;
 }
 
-<div>
-    <h1>
-      Hello world
-    </h1>
-    <button
-      class="c0"
-    >
-      Button
-    </button>
+.c1 {
+  border: none;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background-color: #726a95;
+  color: #fff;
+}
+
+.c1:hover {
+  cursor: pointer;
+  background-color: #8d83b8;
+}
+
+.c1:active,
+.c1:focus {
+  outline: none;
+}
+
+<div
+    class="c0"
+  >
+    <div>
+      <h1>
+        Hello world
+      </h1>
+      <button
+        class="c1"
+      >
+        Button
+      </button>
+    </div>
+    <div>
+      <h1>
+        Hello world
+      </h1>
+      <button
+        class="c1"
+      >
+        Button
+      </button>
+    </div>
+    <div>
+      <h1>
+        Hello world
+      </h1>
+      <button
+        class="c1"
+      >
+        Button
+      </button>
+    </div>
+    <div>
+      <h1>
+        Hello world
+      </h1>
+      <button
+        class="c1"
+      >
+        Button
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

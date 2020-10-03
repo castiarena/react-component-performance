@@ -5,7 +5,7 @@ import home from '.';
 describe('Home router test suite', () => {
     it('should return an html', (done) => {
         const mockApp = express();
-        mockApp.use(home);
+        mockApp.use('/', home);
 
         request(mockApp)
             .get('/')
@@ -13,6 +13,7 @@ describe('Home router test suite', () => {
             .expect(200)
             .end((err, res) => {
                 if (err) {
+                    console.log(res);
                     throw err;
                 }
                 done();

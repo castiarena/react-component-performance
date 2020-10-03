@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button test suite should render a primary button as default 1`] = `
+<DocumentFragment>
+  .c0 {
+  border: none;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background-color: #726a95;
+  color: #fff;
+}
+
+.c0:hover {
+  cursor: pointer;
+  background-color: #8d83b8;
+}
+
+.c0:active,
+.c0:focus {
+  outline: none;
+}
+
+<button
+    class="c0"
+  >
+    default button
+  </button>
+</DocumentFragment>
+`;
+
+exports[`Button test suite should render a primary button as default 2`] = `
+<DocumentFragment>
+  .c0 {
+  border: none;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background-color: #709fb0;
+  color: #fff;
+}
+
+.c0:hover {
+  cursor: pointer;
+  background-color: #84bcd0;
+}
+
+.c0:active,
+.c0:focus {
+  outline: none;
+}
+
+<button
+    class="c0"
+    kind="secondary"
+  >
+    secondary Button
+  </button>
+</DocumentFragment>
+`;

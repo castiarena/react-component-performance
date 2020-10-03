@@ -6,36 +6,36 @@
   "publicPath": "/public",
   "outputPath": "/Users/agustin.castiarena/apps/react-component-performance/dist/public",
   "assetsByChunkName": {
-    "app": [
-      "app.js",
-      "app.js.map"
+    "mock": [
+      "mock.js",
+      "mock.js.map"
     ],
-    "vendors~app": [
-      "vendors~app.bundle.js",
-      "vendors~app.bundle.js.map"
+    "vendors~mock": [
+      "vendors~mock.bundle.js",
+      "vendors~mock.bundle.js.map"
     ]
   },
   "assets": [
     {
-      "name": "app.js",
+      "name": "mock.js",
       "size": 3419,
       "chunks": [
         0
       ],
       "chunkNames": [
-        "app"
+        "mock"
       ],
       "info": {},
       "emitted": false
     },
     {
-      "name": "app.js.map",
+      "name": "mock.js.map",
       "size": 10312,
       "chunks": [
         0
       ],
       "chunkNames": [
-        "app"
+        "mock"
       ],
       "info": {
         "development": true
@@ -43,25 +43,25 @@
       "emitted": false
     },
     {
-      "name": "vendors~app.bundle.js",
+      "name": "vendors~mock.bundle.js",
       "size": 170140,
       "chunks": [
         1
       ],
       "chunkNames": [
-        "vendors~app"
+        "vendors~mock"
       ],
       "info": {},
       "emitted": false
     },
     {
-      "name": "vendors~app.bundle.js.map",
+      "name": "vendors~mock.bundle.js.map",
       "size": 426928,
       "chunks": [
         1
       ],
       "chunkNames": [
-        "vendors~app"
+        "vendors~mock"
       ],
       "info": {
         "development": true
@@ -71,32 +71,32 @@
   ],
   "filteredAssets": 0,
   "entrypoints": {
-    "app": {
+    "mock": {
       "chunks": [
         1,
         0
       ],
       "assets": [
-        "vendors~app.bundle.js",
-        "vendors~app.bundle.js.map",
-        "app.js",
-        "app.js.map"
+        "vendors~mock.bundle.js",
+        "vendors~mock.bundle.js.map",
+        "mock.js",
+        "mock.js.map"
       ],
       "children": {},
       "childAssets": {}
     }
   },
   "namedChunkGroups": {
-    "app": {
+    "mock": {
       "chunks": [
         1,
         0
       ],
       "assets": [
-        "vendors~app.bundle.js",
-        "vendors~app.bundle.js.map",
-        "app.js",
-        "app.js.map"
+        "vendors~mock.bundle.js",
+        "vendors~mock.bundle.js.map",
+        "mock.js",
+        "mock.js.map"
       ],
       "children": {},
       "childAssets": {}

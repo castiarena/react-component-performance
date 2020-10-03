@@ -8,9 +8,7 @@ import hotModuleReplacement from './infrastructure/Development/hotModuleReplacem
 const wrapper = document.getElementById('app-wrapper');
 
 hydrate(
-    <ThemeProvider theme={theme}>
-        <App />
-    </ThemeProvider>,
+    <App />,
     wrapper,
 );
 

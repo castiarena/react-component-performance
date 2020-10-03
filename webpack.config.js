@@ -1,6 +1,3 @@
-//@ts-check
-
-/** @typedef {import('webpack').Configuration} WebpackConfig **/
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -11,11 +8,11 @@ const configs = [
         mode: 'development',
         entry: {
             app: [
-                './app/client.tsx'
-            ]
+                './app/client.tsx',
+            ],
         },
         output: {
-            path: __dirname + '/dist/public',
+            path: `${__dirname}/dist/public`,
             filename: '[name].js',
             chunkFilename: '[name].bundle.js',
             publicPath: '/public',
@@ -24,10 +21,10 @@ const configs = [
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
-        
+
         // Source maps support ('inline-source-map' also works)
         devtool: 'source-map',
-    
+
         // Add the loader for .ts files.
         module: {
             rules: [
@@ -40,18 +37,17 @@ const configs = [
         optimization: {
             splitChunks: {
                 chunks: 'all',
-            }
+            },
         },
         plugins: [
             new webpack.HotModuleReplacementPlugin(),
-            // @ts-ignore
             new LoadablePlugin({
-                writeToDisk: true
+                writeToDisk: true,
             }),
             new BundleAnalyzerPlugin({
-                openAnalyzer: false
+                openAnalyzer: false,
             }),
-            new webpack.EnvironmentPlugin(process.env)
+            new webpack.EnvironmentPlugin(process.env),
         ],
     },
     {
@@ -60,17 +56,17 @@ const configs = [
             server: './app/index.ts',
         },
         output: {
-            path: __dirname + '/dist',
+            path: `${__dirname}/dist`,
             filename: '[name].js',
         },
         // Currently we need to add '.ts' to the resolve.extensions array.
         resolve: {
             extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
-        
+
         // Source maps support ('inline-source-map' also works)
         devtool: 'source-map',
-        
+
         // Add the loader for .ts files.
         module: {
             rules: [

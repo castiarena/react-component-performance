@@ -1,8 +1,14 @@
 {
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "app/pages/**/*.tsx"
+  ],
   "watch": [
-    "app/infrastructure/**/*",
+    "app/infrastructure/",
     "app/index.ts",
     "app/components/Html/index.tsx",
-    "app/pages/**/*.ts"
-  ]
+    "app/pages/**/*"
+  ],
+  "ext": "tsx,ts"
 }
