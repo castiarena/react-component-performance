@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import Layout from '.';
+import Html from '.';
 
-describe('Layout test cases', () => {
-    it('should mount a Layout with title and tags, and rendered on a string', () => {
+describe('Html test cases', () => {
+    it('should mount a Html with title and tags, and rendered on a string', () => {
         const title = 'mock title';
         const moduleName = 'name';
         const scripts = [<script />];
@@ -11,7 +11,7 @@ describe('Layout test cases', () => {
         const links = [<link />];
 
         const html = renderToString(
-            <Layout
+            <Html
                 lang="en"
                 title={title}
                 name={moduleName}
@@ -20,7 +20,7 @@ describe('Layout test cases', () => {
                 scripts={scripts}
             >
                 <p>some child mocked</p>
-            </Layout>,
+            </Html>,
         );
 
         expect(html).toMatch(new RegExp(title, 'g'));

@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import path from 'path';
 import { ChunkExtractor } from '@loadable/server';
 import { ServerStyleSheet } from 'styled-components';
-import Layout from '../../components/Layout';
+import Html from '../../components/Html';
 
 const statsFile = path.resolve('./dist/public/loadable-stats.json');
 
@@ -29,7 +29,7 @@ class SSR {
         const links: ReactElement[] = this.extractor.getLinkElements();
 
         return renderToString(
-            createElement(Layout, {
+            createElement(Html, {
                 ...props,
                 styles,
                 scripts,
