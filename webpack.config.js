@@ -1,9 +1,7 @@
-const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const LoadablePlugin = require('@loadable/webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const [clientPlugins] = require('./webpack.config.common');
 
 const configs = [
     {
@@ -45,22 +43,11 @@ const configs = [
             },
         },
         plugins: [
+            ...clientPlugins,
             new webpack.HotModuleReplacementPlugin(),
-            new LoadablePlugin({
-                writeToDisk: true,
-            }),
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
             }),
-            new CopyPlugin({
-                patterns: [
-                    {
-                        from: path.resolve(__dirname, 'app/assets'),
-                        to: path.resolve(__dirname, 'dist/assets'),
-                    },
-                ],
-            }),
-            new webpack.EnvironmentPlugin(process.env),
         ],
     },
     {
