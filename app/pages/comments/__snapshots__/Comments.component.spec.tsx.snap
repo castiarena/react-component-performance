@@ -30,6 +30,12 @@ exports[`Comments component test suite smoke test, snapshot only  1`] = `
   outline: none;
 }
 
+@media (max-width:576px) {
+  .c0 {
+    grid-template-columns: 1fr;
+  }
+}
+
 <div
     class="c0"
   >

@@ -7,6 +7,7 @@ interface IPalette {
 }
 
 interface Sizes {
+    smaller: string;
     small: string;
     medium: string;
     large: string;
@@ -16,6 +17,7 @@ declare module 'styled-components' {
     export interface DefaultTheme {
         borderRadius: Sizes;
         spacing: Sizes;
+        typography: Sizes;
         palette: {
             common: {
                 black: string;

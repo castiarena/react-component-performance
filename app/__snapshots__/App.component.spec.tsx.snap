@@ -2,14 +2,21 @@
 
 exports[`App component test suite smoke test, snapshot only  1`] = `
 <DocumentFragment>
-  .c1 {
+  .c4 {
   display: grid;
   grid-template-columns: repeat(1,1fr);
   grid-column-gap: 40px;
   padding: 40px;
 }
 
-.c3 {
+.c6 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-column-gap: 12px;
+  padding: 12px;
+}
+
+.c12 {
   border: none;
   padding: 16px 30px;
   border-radius: 24px;
@@ -20,14 +27,60 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   text-decoration: none;
 }
 
-.c3:hover {
+.c12:hover {
   cursor: pointer;
   background-color: #8d83b8;
 }
 
-.c3:active,
-.c3:focus {
+.c12:active,
+.c12:focus {
   outline: none;
+}
+
+.c5 {
+  font-size: 2em;
+  margin: 26px 0;
+  text-align: center;
+  color: #222831;
+  font-weight: bold;
+}
+
+.c8 {
+  font-size: 1.3em;
+  margin: 26px 0;
+  text-align: left;
+  color: #222831;
+  font-weight: bold;
+}
+
+.c9 {
+  font-size: 1em;
+  margin: 12px 0;
+  text-align: left;
+  color: #222831;
+  font-weight: normal;
+}
+
+.c10 {
+  color: #726a95;
+}
+
+.c10:hover {
+  color: #8d83b8;
+}
+
+.c7 {
+  padding: 26px;
+  border-radius: none;
+  box-shadow: none;
+  background-color: #fafafa;
+}
+
+.c11 {
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
+  background-color: #fafafa;
 }
 
 .c2 {
@@ -38,51 +91,133 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   color: #8d83b8;
 }
 
+.c1 {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 16px;
+  justify-items: center;
+}
+
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 16px;
+}
+
 .c0 {
   font-family: 'Manrope',sans-serif;
+}
+
+@media (max-width:576px) {
+  .c4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:576px) {
+  .c6 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:576px) {
+  .c1 {
+    grid-template-columns: 1fr;
+  }
 }
 
 <div
     class="c0"
   >
-    <a
-      href="/"
+    <header
+      class="c1"
     >
-      home
-    </a>
-    <a
-      href="/comments"
-    >
-      comments
-    </a>
-    <a
-      href="/performance"
-    >
-      performance
-    </a>
+      <img
+        alt="Example"
+        src="./assets/logo-realworldone.svg"
+      />
+      <a
+        class="c2 c3"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="c2 c3"
+        href="/comments"
+      >
+        Comments
+      </a>
+      <a
+        class="c2 c3"
+        href="/performance"
+      >
+        Performance
+      </a>
+    </header>
     <div>
       <div
-        class="c1"
+        class="c4"
       >
-        <div>
-          <h1>
-            Real world one test exercise
-          </h1>
-          <a
-            class="c2"
-            href="/some"
+        <h1
+          class="c5"
+        >
+          Real world one
+          <strong>
+            Frontend Developer Test
+          </strong>
+        </h1>
+        <div
+          class="c6"
+        >
+          <div
+            class="c7"
           >
-            Other page
-          </a>
-          <p>
-            <a
-              class="c3"
-              download=""
-              href="./assets/instructions.pdf"
+            <h2
+              class="c8"
             >
-              Download instructions
-            </a>
-          </p>
+              Prerequisites
+            </h2>
+            <p
+              class="c9"
+            >
+              Choose any JSON dummy data online generator. This will be your data source that will be used within your application (so called Test Data).
+            </p>
+            <p
+              class="c9"
+            >
+              The Test Data size should be at least 500 records. e.g.
+              <a
+                class="c10"
+                href="https://jsonplaceholder.typicode.com/comments"
+                target="_blank"
+              >
+                https://jsonplaceholder.typicode.com/comments
+              </a>
+            </p>
+          </div>
+          <div
+            class="c11"
+          >
+            <h2
+              class="c8"
+            >
+              Tasks
+            </h2>
+            Can see the full tasks on the PDF file:
+            <p
+              class="c9"
+            >
+              <a
+                class="c12"
+                download=""
+                href="./assets/instructions.pdf"
+              >
+                Download
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

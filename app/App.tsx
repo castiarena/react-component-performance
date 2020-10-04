@@ -1,13 +1,12 @@
 import React from 'react';
-import {
-    Switch, Route, Link,
-} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
-import theme from './theme';
+import customTheme from './theme';
 import Home from './pages/home/Home';
 import Comments from './pages/comments/Comments';
 import Performance from './pages/performance/Performance';
+import Header from './components/Header';
 
 const MainWrapper = styled.div`
     font-family: 'Manrope', sans-serif;
@@ -19,15 +18,26 @@ const GlobalStyles = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
     }
+    html, body {
+      background-color: ${customTheme.palette.common.white};
+    }
 `;
 
 const App: React.FC = () => (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={customTheme}>
         <MainWrapper>
             <GlobalStyles />
-            <Link to="/">home</Link>
-            <Link to="/comments">comments</Link>
-            <Link to="/performance">performance</Link>
+            <Header routes={[{
+                to: '/',
+                name: 'Home',
+            }, {
+                to: '/comments',
+                name: 'Comments',
+            }, {
+                to: '/performance',
+                name: 'Performance',
+            }]}
+            />
             <div>
                 <Switch>
                     <Route exact path="/">

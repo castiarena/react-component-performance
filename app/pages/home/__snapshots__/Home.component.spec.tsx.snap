@@ -10,6 +10,13 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
 }
 
 .c2 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-column-gap: 12px;
+  padding: 12px;
+}
+
+.c8 {
   border: none;
   padding: 16px 30px;
   border-radius: 24px;
@@ -20,46 +27,135 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   text-decoration: none;
 }
 
-.c2:hover {
+.c8:hover {
   cursor: pointer;
   background-color: #8d83b8;
 }
 
-.c2:active,
-.c2:focus {
+.c8:active,
+.c8:focus {
   outline: none;
 }
 
 .c1 {
+  font-size: 2em;
+  margin: 26px 0;
+  text-align: center;
+  color: #222831;
+  font-weight: bold;
+}
+
+.c4 {
+  font-size: 1.3em;
+  margin: 26px 0;
+  text-align: left;
+  color: #222831;
+  font-weight: bold;
+}
+
+.c5 {
+  font-size: 1em;
+  margin: 12px 0;
+  text-align: left;
+  color: #222831;
+  font-weight: normal;
+}
+
+.c6 {
   color: #726a95;
 }
 
-.c1:hover {
+.c6:hover {
   color: #8d83b8;
+}
+
+.c3 {
+  padding: 26px;
+  border-radius: none;
+  box-shadow: none;
+  background-color: #fafafa;
+}
+
+.c7 {
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
+  background-color: #fafafa;
+}
+
+@media (max-width:576px) {
+  .c0 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:576px) {
+  .c2 {
+    grid-template-columns: 1fr;
+  }
 }
 
 <div
     class="c0"
   >
-    <div>
-      <h1>
-        Real world one test exercise
-      </h1>
-      <a
-        class="c1"
-        href="/some"
+    <h1
+      class="c1"
+    >
+      Real world one
+      <strong>
+        Frontend Developer Test
+      </strong>
+    </h1>
+    <div
+      class="c2"
+    >
+      <div
+        class="c3"
       >
-        Other page
-      </a>
-      <p>
-        <a
-          class="c2"
-          download=""
-          href="./assets/instructions.pdf"
+        <h2
+          class="c4"
         >
-          Download instructions
-        </a>
-      </p>
+          Prerequisites
+        </h2>
+        <p
+          class="c5"
+        >
+          Choose any JSON dummy data online generator. This will be your data source that will be used within your application (so called Test Data).
+        </p>
+        <p
+          class="c5"
+        >
+          The Test Data size should be at least 500 records. e.g.
+          <a
+            class="c6"
+            href="https://jsonplaceholder.typicode.com/comments"
+            target="_blank"
+          >
+            https://jsonplaceholder.typicode.com/comments
+          </a>
+        </p>
+      </div>
+      <div
+        class="c7"
+      >
+        <h2
+          class="c4"
+        >
+          Tasks
+        </h2>
+        Can see the full tasks on the PDF file:
+        <p
+          class="c5"
+        >
+          <a
+            class="c8"
+            download=""
+            href="./assets/instructions.pdf"
+          >
+            Download
+          </a>
+        </p>
+      </div>
     </div>
   </div>
 </DocumentFragment>

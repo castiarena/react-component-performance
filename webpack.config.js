@@ -33,7 +33,7 @@ const configs = [
                     loader: 'ts-loader',
                 },
                 {
-                    test: /\.(png|jpe?g|gif|pdf)$/i,
+                    test: /\.(png|jpe?g|gif|svg)$/i,
                 },
             ],
         },
