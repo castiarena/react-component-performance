@@ -4,27 +4,9 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
 <DocumentFragment>
   .c1 {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(1,1fr);
   grid-column-gap: 40px;
   padding: 40px;
-}
-
-.c4 {
-  border: none;
-  padding: 16px 30px;
-  border-radius: 24px;
-  background-color: #726a95;
-  color: #fff;
-}
-
-.c4:hover {
-  cursor: pointer;
-  background-color: #8d83b8;
-}
-
-.c4:active,
-.c4:focus {
-  outline: none;
 }
 
 .c3 {
@@ -64,9 +46,19 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
     class="c0"
   >
     <a
-      href="/some"
+      href="/"
     >
-      some
+      home
+    </a>
+    <a
+      href="/comments"
+    >
+      comments
+    </a>
+    <a
+      href="/performance"
+    >
+      performance
     </a>
     <div>
       <div
@@ -82,43 +74,15 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
           >
             Other page
           </a>
-          <a
-            class="c3"
-            download=""
-            href="./assets/instructions.pdf"
-          >
-            Download instructions
-          </a>
-        </div>
-        <div>
-          <h1>
-            Hello world
-          </h1>
-          <button
-            class="c4"
-          >
-            Button
-          </button>
-        </div>
-        <div>
-          <h1>
-            Hello world
-          </h1>
-          <button
-            class="c4"
-          >
-            Button
-          </button>
-        </div>
-        <div>
-          <h1>
-            Hello world
-          </h1>
-          <button
-            class="c4"
-          >
-            Button
-          </button>
+          <p>
+            <a
+              class="c3"
+              download=""
+              href="./assets/instructions.pdf"
+            >
+              Download instructions
+            </a>
+          </p>
         </div>
       </div>
     </div>

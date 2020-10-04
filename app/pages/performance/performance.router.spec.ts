@@ -1,14 +1,14 @@
 import request from 'supertest';
 import express from 'express';
-import home from '.';
+import performance from '.';
 
 describe('Home router test suite', () => {
     it('should return an html', (done) => {
         const mockApp = express();
-        mockApp.use(home);
+        mockApp.use(performance);
 
         request(mockApp)
-            .get('/')
+            .get('/performance')
             .expect('Content-Type', /html/)
             .expect(200)
             .end((err) => {
