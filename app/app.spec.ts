@@ -1,15 +1,18 @@
 import request from 'supertest';
 import express from 'express';
-import server from '.';
+import runningServer from '.';
 
 jest.mock('./infrastructure/EnvDispatcher',
     () => () => ({ server: express() }));
 
 describe('App server test suite', () => {
     it('should run the app', (done) => {
-        request(server)
+        request(runningServer)
             .get('/')
             .expect('Content-Type', /html/)
-            .end(() => done());
+            .end(() => {
+                runningServer.close();
+                done();
+            });
     });
 });

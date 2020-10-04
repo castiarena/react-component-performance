@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 
-interface ButtonProps {
+export interface ButtonProps {
     kind?: 'primary' | 'secondary';
 }
 
-const Button = styled.button<ButtonProps>`
+export const ButtonStyles = css<ButtonProps>`
     border: none;
-    padding: ${({ theme }) => theme.spacing.small} ${({ theme }) => theme.spacing.large};
+    padding: ${({ theme }) => `${theme.spacing.small} ${theme.spacing.large}`};
     border-radius: ${({ theme }) => theme.borderRadius.large};
     ${({ theme, kind = 'primary' }) => {
         let color = theme.palette.primary;
@@ -27,5 +27,7 @@ const Button = styled.button<ButtonProps>`
         `;
     }};
 `;
+
+const Button = styled.button<ButtonProps>`${ButtonStyles}`;
 
 export default Button;

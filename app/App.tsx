@@ -1,7 +1,7 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { Router } from 'react-router';
-import { createMemoryHistory } from 'history';
+import {
+    Switch, Route, Link,
+} from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
 import Home from './pages/home/Home';
@@ -23,13 +23,17 @@ const App: React.FC = () => (
     <ThemeProvider theme={theme}>
         <MainWrapper>
             <GlobalStyles />
-            <Router history={createMemoryHistory()}>
+            <Link to="/some">some</Link>
+            <div>
                 <Switch>
-                    <Route path="/">
+                    <Route exact path="/">
                         <Home />
                     </Route>
+                    <Route path="/some">
+                        some
+                    </Route>
                 </Switch>
-            </Router>
+            </div>
         </MainWrapper>
     </ThemeProvider>
 );

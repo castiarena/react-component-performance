@@ -9,7 +9,7 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   padding: 40px;
 }
 
-.c2 {
+.c4 {
   border: none;
   padding: 16px 30px;
   border-radius: 24px;
@@ -17,14 +17,43 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   color: #fff;
 }
 
-.c2:hover {
+.c4:hover {
   cursor: pointer;
   background-color: #8d83b8;
 }
 
-.c2:active,
-.c2:focus {
+.c4:active,
+.c4:focus {
   outline: none;
+}
+
+.c3 {
+  border: none;
+  padding: 16px 30px;
+  border-radius: 24px;
+  background-color: #726a95;
+  color: #fff;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c3:hover {
+  cursor: pointer;
+  background-color: #8d83b8;
+}
+
+.c3:active,
+.c3:focus {
+  outline: none;
+}
+
+.c2 {
+  color: #726a95;
+}
+
+.c2:hover {
+  color: #8d83b8;
 }
 
 .c0 {
@@ -34,48 +63,63 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
 <div
     class="c0"
   >
-    <div
-      class="c1"
+    <a
+      href="/some"
     >
-      <div>
-        <h1>
-          Hello world
-        </h1>
-        <button
-          class="c2"
-        >
-          Button
-        </button>
-      </div>
-      <div>
-        <h1>
-          Hello world
-        </h1>
-        <button
-          class="c2"
-        >
-          Button
-        </button>
-      </div>
-      <div>
-        <h1>
-          Hello world
-        </h1>
-        <button
-          class="c2"
-        >
-          Button
-        </button>
-      </div>
-      <div>
-        <h1>
-          Hello world
-        </h1>
-        <button
-          class="c2"
-        >
-          Button
-        </button>
+      some
+    </a>
+    <div>
+      <div
+        class="c1"
+      >
+        <div>
+          <h1>
+            Real world one test exercise
+          </h1>
+          <a
+            class="c2"
+            href="/some"
+          >
+            Other page
+          </a>
+          <a
+            class="c3"
+            download=""
+            href="./assets/instructions.pdf"
+          >
+            Download instructions
+          </a>
+        </div>
+        <div>
+          <h1>
+            Hello world
+          </h1>
+          <button
+            class="c4"
+          >
+            Button
+          </button>
+        </div>
+        <div>
+          <h1>
+            Hello world
+          </h1>
+          <button
+            class="c4"
+          >
+            Button
+          </button>
+        </div>
+        <div>
+          <h1>
+            Hello world
+          </h1>
+          <button
+            class="c4"
+          >
+            Button
+          </button>
+        </div>
       </div>
     </div>
   </div>

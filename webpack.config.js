@@ -1,7 +1,9 @@
+const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const LoadablePlugin = require('@loadable/webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const configs = [
     {
@@ -32,6 +34,9 @@ const configs = [
                     test: /\.tsx?$/,
                     loader: 'ts-loader',
                 },
+                {
+                    test: /\.(png|jpe?g|gif|pdf)$/i,
+                },
             ],
         },
         optimization: {
@@ -46,6 +51,14 @@ const configs = [
             }),
             new BundleAnalyzerPlugin({
                 openAnalyzer: false,
+            }),
+            new CopyPlugin({
+                patterns: [
+                    {
+                        from: path.resolve(__dirname, 'app/assets'),
+                        to: path.resolve(__dirname, 'dist/assets'),
+                    },
+                ],
             }),
             new webpack.EnvironmentPlugin(process.env),
         ],

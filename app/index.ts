@@ -11,7 +11,7 @@ dotEnv.config();
 const { NODE_ENV } = process.env;
 const { server }: ExportServer = envDispatcher(NODE_ENV);
 
-server
+const runningServer = server
     .use(compression())
     .use(express.static('dist'))
     .use('/', home)
@@ -20,4 +20,4 @@ server
         console.log('\x1b[36m%s\x1b[0m', `App running at on ${process.env.PORT}`);
     });
 
-export default server;
+export default runningServer;
