@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputText test suite should a default InputText 1`] = `
+<DocumentFragment>
+  <input
+    class=""
+    type="text"
+    value="something"
+  />
+</DocumentFragment>
+`;

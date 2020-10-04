@@ -3,7 +3,7 @@ import compression from 'compression';
 import express from 'express';
 import envDispatcher, { ExportServer } from './infrastructure/EnvDispatcher';
 import home from './pages/home';
-import comments from './pages/comments';
+import comments from './pages/test';
 import performance from './pages/performance';
 
 // load env variables

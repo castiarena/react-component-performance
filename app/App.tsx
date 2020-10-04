@@ -4,7 +4,7 @@ import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
 import customTheme from './theme';
 import Home from './pages/home/Home';
-import Comments from './pages/comments/Comments';
+import Test from './pages/test/Test';
 import Performance from './pages/performance/Performance';
 import Header from './components/Header';
 
@@ -15,11 +15,12 @@ const MainWrapper = styled.div`
 const GlobalStyles = createGlobalStyle`
     ${reset};
     * {
+        box-sizing: border-box;
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
     }
     html, body {
-      background-color: ${customTheme.palette.common.white};
+      background-color: #FBFCFF;
     }
 `;
 
@@ -31,8 +32,8 @@ const App: React.FC = () => (
                 to: '/',
                 name: 'Home',
             }, {
-                to: '/comments',
-                name: 'Comments',
+                to: '/test',
+                name: 'Test',
             }, {
                 to: '/performance',
                 name: 'Performance',
@@ -43,8 +44,8 @@ const App: React.FC = () => (
                     <Route exact path="/">
                         <Home />
                     </Route>
-                    <Route path="/comments">
-                        <Comments />
+                    <Route path="/test">
+                        <Test />
                     </Route>
                     <Route path="/performance">
                         <Performance />

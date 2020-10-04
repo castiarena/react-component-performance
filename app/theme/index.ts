@@ -1,10 +1,10 @@
 import { DefaultTheme } from 'styled-components';
 
-const theme: DefaultTheme = {
+const customTheme: DefaultTheme = {
     borderRadius: {
         smaller: '10px',
         small: '12px',
-        medium: '18px',
+        medium: '20px',
         large: '24px',
     },
     spacing: {
@@ -21,12 +21,14 @@ const theme: DefaultTheme = {
     },
     palette: {
         common: {
-            black: '#222831',
-            white: '#fafafa',
+            black: '#0A0A33',
+            gray: '#F1F6FF',
+            grayDark: '#7A7B92',
+            white: '#FBFCFF',
         },
         primary: {
-            main: '#726a95',
-            hover: '#8d83b8',
+            main: '#0084ff',
+            hover: '#a7c3dc',
             contrast: '#fff',
         },
         secondary: {
@@ -37,4 +39,4 @@ const theme: DefaultTheme = {
     },
 };
 
-export default theme;
+export default customTheme;

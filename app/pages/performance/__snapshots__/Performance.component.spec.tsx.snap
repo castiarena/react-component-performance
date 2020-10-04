@@ -6,15 +6,17 @@ exports[`Performance component test suite smoke test, snapshot only  1`] = `
   display: grid;
   grid-template-columns: repeat(1,1fr);
   grid-column-gap: 40px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .c1 {
   border: none;
   padding: 16px 30px;
-  border-radius: 24px;
-  background-color: #726a95;
+  border-radius: 10px;
+  background-color: #0084ff;
   color: #fff;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -22,18 +24,12 @@ exports[`Performance component test suite smoke test, snapshot only  1`] = `
 
 .c1:hover {
   cursor: pointer;
-  background-color: #8d83b8;
+  background-color: #a7c3dc;
 }
 
 .c1:active,
 .c1:focus {
   outline: none;
-}
-
-@media (max-width:576px) {
-  .c0 {
-    grid-template-columns: 1fr;
-  }
 }
 
 <div

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test component test suite smoke test, snapshot only  1`] = `
+<DocumentFragment>
+  .c0 {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-column-gap: 40px;
+  padding: 20px;
+}
+
+.c8 {
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-column-gap: 10px;
+  padding: 5px;
+}
+
+.c7 {
+  border: none;
+  padding: 16px 30px;
+  border-radius: 10px;
+  background-color: #0084ff;
+  color: #fff;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c7:hover {
+  cursor: pointer;
+  background-color: #a7c3dc;
+}
+
+.c7:active,
+.c7:focus {
+  outline: none;
+}
+
+.c1 {
+  font-size: 2em;
+  margin: 26px 0;
+  text-align: center;
+  color: #0A0A33;
+  font-weight: bold;
+}
+
+.c3 {
+  font-size: 1.3em;
+  margin: 26px 0;
+  text-align: left;
+  color: #0A0A33;
+  font-weight: bold;
+}
+
+.c5 {
+  font-size: 1em;
+  margin: 12px 0;
+  line-height: 1.3em;
+  text-align: left;
+  color: #0A0A33;
+  font-weight: normal;
+}
+
+.c2 {
+  padding: 26px;
+  border-radius: none;
+  box-shadow: none;
+  background-color: #FBFCFF;
+}
+
+.c6 {
+  padding: 12px;
+  border-radius: none;
+  box-shadow: none;
+  background-color: #FBFCFF;
+}
+
+.c4 {
+  color: #0084ff;
+}
+
+.c4:hover {
+  color: #a7c3dc;
+}
+
+.c9 {
+  width: 100%;
+  height: 100vh;
+}
+
+<div
+    class="c0"
+  >
+    <h1
+      class="c1"
+    >
+      Test data
+    </h1>
+    <div
+      class="c2"
+    >
+      <h2
+        class="c3"
+      >
+        Fetching data from 
+        <a
+          class="c4"
+          href="https://www.instantwebtools.net/fake-rest-api"
+        >
+          https://www.instantwebtools.net/fake-rest-api
+        </a>
+      </h2>
+      <div
+        class="c2"
+      >
+        <p
+          class="c5"
+        >
+          I choice 
+          <strong>
+            instantwebtools
+          </strong>
+           because there is an example where the API supports pagination. The example data loads passenger information about passengers of airlines.
+        </p>
+        <div
+          class="c6"
+        >
+          <a
+            class="c7"
+          >
+            Fetch passengers
+          </a>
+          <input
+            class=""
+            value="50"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="c8"
+    >
+      <section
+        class="c9"
+      >
+        <div
+          style="overflow: visible; height: 0px; width: 0px;"
+        />
+        <div
+          class="resize-triggers"
+        >
+          <div
+            class="expand-trigger"
+          >
+            <div
+              style="width: 1px; height: 1px;"
+            />
+          </div>
+          <div
+            class="contract-trigger"
+          />
+        </div>
+      </section>
+    </div>
+  </div>
+</DocumentFragment>
+`;

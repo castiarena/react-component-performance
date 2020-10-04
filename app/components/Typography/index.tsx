@@ -26,14 +26,15 @@ export const Title = styled.h1<TypographyDefinition>`
   ${typographyStyles};
 `;
 
-export const SubTitle = styled.h2`
+export const SubTitle = styled.h2<TypographyDefinition>`
   font-size: ${({ theme }) => theme.typography.medium};
   margin: ${({ theme }) => `${theme.spacing.medium} 0 `};;
   ${typographyStyles};
 `;
 
-export const Phar = styled.p`
+export const Phar = styled.p<TypographyDefinition>`
   font-size: ${({ theme }) => theme.typography.small};  
-  margin: ${({ theme }) => `${theme.spacing.smaller} 0 `};;
+  margin: ${({ theme }) => `${theme.spacing.smaller} 0 `};
+  line-height: ${({ theme }) => theme.typography.medium};
   ${typographyStyles};
 `;

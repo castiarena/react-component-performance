@@ -6,7 +6,7 @@ exports[`Box test suite should a default Box 1`] = `
   padding: 26px;
   border-radius: none;
   box-shadow: none;
-  background-color: #fafafa;
+  background-color: #FBFCFF;
 }
 
 <div
@@ -21,9 +21,9 @@ exports[`Box test suite should a shadow Box 1`] = `
 <DocumentFragment>
   .c0 {
   padding: 26px;
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
-  background-color: #fafafa;
+  background-color: #FBFCFF;
 }
 
 <div
@@ -38,7 +38,7 @@ exports[`Box test suite should a shadow transparent Box 1`] = `
 <DocumentFragment>
   .c0 {
   padding: 26px;
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
   background-color: transparent;
 }
@@ -57,7 +57,7 @@ exports[`Box test suite should a shadow transparent Box 2`] = `
   padding: 30px;
   border-radius: none;
   box-shadow: none;
-  background-color: #fafafa;
+  background-color: #FBFCFF;
 }
 
 <div

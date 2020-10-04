@@ -1,10 +1,11 @@
 import styled, { css } from 'styled-components';
-import { Sizes } from '../../typing/themeDefinition';
+import { Sizes } from '../../typing';
 
 interface BoxProps {
     shadow?: boolean;
     transparent?: boolean;
     size?: keyof Sizes;
+    fitted?: boolean;
 }
 
 const Box = styled.div<BoxProps>`

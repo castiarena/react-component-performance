@@ -8,7 +8,7 @@ describe('Home router test suite', () => {
         mockApp.use(comments);
 
         request(mockApp)
-            .get('/comments')
+            .get('/test')
             .expect('Content-Type', /html/)
             .expect(200)
             .end((err) => {

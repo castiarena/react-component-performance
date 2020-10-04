@@ -4,9 +4,9 @@ import App from '../../App';
 
 const comments: IRouter = Router();
 
-comments.get('/comments', (req, res) => {
+comments.get('/test', (req, res) => {
     const ssr = new SSR(App, {
-        title: 'React component performance - comments',
+        title: 'React component performance - Test',
         name: 'app',
         lang: 'en',
     });

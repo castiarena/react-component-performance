@@ -6,22 +6,24 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   display: grid;
   grid-template-columns: repeat(1,1fr);
   grid-column-gap: 40px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .c2 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-column-gap: 12px;
-  padding: 12px;
+  padding: 6px;
 }
 
 .c8 {
   border: none;
   padding: 16px 30px;
-  border-radius: 24px;
-  background-color: #726a95;
+  border-radius: 10px;
+  background-color: #0084ff;
   color: #fff;
+  -webkit-transition: background-color .2s ease-out;
+  transition: background-color .2s ease-out;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -29,7 +31,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
 
 .c8:hover {
   cursor: pointer;
-  background-color: #8d83b8;
+  background-color: #a7c3dc;
 }
 
 .c8:active,
@@ -41,7 +43,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   font-size: 2em;
   margin: 26px 0;
   text-align: center;
-  color: #222831;
+  color: #0A0A33;
   font-weight: bold;
 }
 
@@ -49,44 +51,39 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   font-size: 1.3em;
   margin: 26px 0;
   text-align: left;
-  color: #222831;
+  color: #0A0A33;
   font-weight: bold;
 }
 
 .c5 {
   font-size: 1em;
   margin: 12px 0;
+  line-height: 1.3em;
   text-align: left;
-  color: #222831;
+  color: #0A0A33;
   font-weight: normal;
 }
 
 .c6 {
-  color: #726a95;
+  color: #0084ff;
 }
 
 .c6:hover {
-  color: #8d83b8;
+  color: #a7c3dc;
 }
 
 .c3 {
   padding: 26px;
   border-radius: none;
   box-shadow: none;
-  background-color: #fafafa;
+  background-color: #FBFCFF;
 }
 
 .c7 {
   padding: 26px;
-  border-radius: 18px;
+  border-radius: 20px;
   box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
-  background-color: #fafafa;
-}
-
-@media (max-width:576px) {
-  .c0 {
-    grid-template-columns: 1fr;
-  }
+  background-color: #FBFCFF;
 }
 
 @media (max-width:576px) {

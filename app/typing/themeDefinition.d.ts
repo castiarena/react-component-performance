@@ -1,16 +1,10 @@
 import 'styled-components';
+import { Sizes } from '.';
 
 interface IPalette {
     main: string;
     contrast: string;
     hover: string;
-}
-
-interface Sizes {
-    smaller: string;
-    small: string;
-    medium: string;
-    large: string;
 }
 
 declare module 'styled-components' {
@@ -21,6 +15,8 @@ declare module 'styled-components' {
         palette: {
             common: {
                 black: string;
+                gray: string;
+                grayDark: string;
                 white: string;
             }
             primary: IPalette

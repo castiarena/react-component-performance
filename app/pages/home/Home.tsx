@@ -12,7 +12,7 @@ const Home = () => (
             Real world one
             <strong>Frontend Developer Test</strong>
         </Title>
-        <Layout columns={2} gap={12}>
+        <Layout columns={2} gap={12} responsive>
             <Box>
                 <SubTitle bold>
                     Prerequisites

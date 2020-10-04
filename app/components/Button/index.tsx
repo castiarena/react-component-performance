@@ -7,7 +7,7 @@ export interface ButtonProps {
 export const ButtonStyles = css<ButtonProps>`
     border: none;
     padding: ${({ theme }) => `${theme.spacing.small} ${theme.spacing.large}`};
-    border-radius: ${({ theme }) => theme.borderRadius.large};
+    border-radius: ${({ theme }) => theme.borderRadius.smaller};
     ${({ theme, kind = 'primary' }) => {
         let color = theme.palette.primary;
         if (kind === 'secondary') {
@@ -16,7 +16,7 @@ export const ButtonStyles = css<ButtonProps>`
         return css`
           background-color: ${color.main};
           color: ${color.contrast};
-          
+          transition: background-color .2s ease-out;
           &:hover {
             cursor: pointer;
             background-color: ${color.hover};
