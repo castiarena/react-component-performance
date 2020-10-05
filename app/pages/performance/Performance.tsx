@@ -12,7 +12,10 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 
 const Performance = () => {
     const {
-        passengers, handleLoadMorePassengers, fetchPassengers, passengerDuration,
+        passengers,
+        handleLoadMorePassengers,
+        fetchPassengers,
+        passengerDuration,
     } = usePassengers();
     const [showPerformance, setShowPerformance] = useState(true);
     const {
@@ -32,8 +35,7 @@ const Performance = () => {
             <Title align="center" bold>
                 Components performance measuring
             </Title>
-            {(showPerformance && isDevelopment)
-            && (
+            {showPerformance && isDevelopment && (
                 <FixedBox>
                     <SubTitle bold ref={name} />
                     <Phar ref={phase} />
@@ -41,30 +43,29 @@ const Performance = () => {
                     <Phar ref={time} />
                     <Phar>
                         Last request duration:
-                        {' '}
                         {passengerDuration}
                     </Phar>
                 </FixedBox>
             )}
             <Layout columns={1} gap={10}>
-                { !isDevelopment && (
+                {!isDevelopment && (
                     <Layout columns={2} gap={10} fitted>
                         <Box>
                             <SubTitle>Performance viewing</SubTitle>
                             <Phar>
-                                In order to see the performance metrics running you should
-                                follow the steps on the repository and run it locally,
-                                on development mode.
+                                In order to see the performance metrics running you should follow
+                                the steps on the repository and run it locally, on development mode.
                             </Phar>
-                            <ButtonAnchor href="https://github.com/castiarena/react-component-performance" target="_blank">
+                            <ButtonAnchor
+                                href="https://github.com/castiarena/react-component-performance"
+                                target="_blank"
+                            >
                                 Repo
                             </ButtonAnchor>
                         </Box>
                         <Box shadow>
                             <SubTitle>Direct download</SubTitle>
-                            <Phar>
-                                Download here the repository via https
-                            </Phar>
+                            <Phar>Download here the repository via https</Phar>
                             <ButtonAnchor
                                 href="https://github.com/castiarena/react-component-performance.git"
                                 download
@@ -75,7 +76,7 @@ const Performance = () => {
                         </Box>
                     </Layout>
                 )}
-                { isDevelopment && (
+                {isDevelopment && (
                     <>
                         <Layout columns={2} gap={10} responsive>
                             <Box fitted>
@@ -89,10 +90,9 @@ const Performance = () => {
 
                             <Box fitted>
                                 <Phar>
-                                    And whit this button you can see the performance
-                                    metrics of the  first, render and the repainting
-                                    on each update, by using React.Profiler
-                                    component.
+                                    And whit this button you can see the performance metrics of the
+                                    first, render and the repainting on each update, by using
+                                    React.Profiler component.
                                 </Phar>
                                 <ButtonAnchor onClick={handleClickShowPerformance} kind="secondary">
                                     Toggle performance tab
