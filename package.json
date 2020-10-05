@@ -118,9 +118,8 @@
   "lint-staged": {
     "app/**/*.ts{,x}": [
       "bash -t tsc --noEmit",
-      "bash -t prettier --write --ignore-unknown",
-      "bash -t eslint --fix",
-      "bash -t yarn test"
+      "prettier --write --ignore-unknown",
+      "eslint --fix"
     ]
   }
 }
