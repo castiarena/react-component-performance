@@ -3,14 +3,16 @@ import { Switch, Route } from 'react-router-dom';
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 import reset from 'styled-reset';
 import customTheme from './theme';
-import Home from './pages/home/Home';
 import Test from './pages/test/Test';
 import Performance from './pages/performance/Performance';
 import Header from './components/Header';
 import media from './components/Layout/MediaQueries';
+import LazyLoad from './components/LazyLoad';
 
 const MainWrapper = styled.div`
     font-family: 'Manrope', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
     ${media.desktop}{
         padding: ${({ theme }) => theme.spacing.medium};
     }
@@ -49,13 +51,13 @@ const App: React.FC = () => (
             <div>
                 <Switch>
                     <Route exact path="/">
-                        <Home />
+                        <LazyLoad importComponent={() => import('./pages/home/Home')} />
                     </Route>
                     <Route path="/test">
-                        <Test />
+                        <LazyLoad importComponent={() => import('./pages/test/Test')} />
                     </Route>
                     <Route path="/performance">
-                        <Performance />
+                        <LazyLoad importComponent={() => import('./pages/performance/Performance')} />
                     </Route>
                 </Switch>
             </div>

@@ -1,94 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App component test suite smoke test, snapshot only  1`] = `
+exports[`App component test suite should render the home  1`] = `
 <DocumentFragment>
-  .c4 {
-  display: grid;
-  grid-template-columns: repeat(1,1fr);
-  justify-items: stretch;
-  grid-column-gap: 40px;
-}
-
-.c6 {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  justify-items: stretch;
-  grid-column-gap: 12px;
-}
-
-.c12 {
-  border: none;
-  padding: 16px 30px;
-  border-radius: 10px;
-  background-color: #0084ff;
-  color: #fff;
-  -webkit-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;
-  display: inline-block;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.c12:hover {
-  cursor: pointer;
-  background-color: #a7c3dc;
-}
-
-.c12:active,
-.c12:focus {
-  outline: none;
-}
-
-.c5 {
-  font-size: 2em;
-  margin: 26px 0;
-  text-align: center;
-  color: #0A0A33;
-  font-weight: bold;
-}
-
-.c8 {
-  font-size: 1.3em;
-  margin: 26px 0;
-  text-align: left;
-  color: #0A0A33;
-  font-weight: bold;
-}
-
-.c10 {
-  font-size: 1em;
-  margin: 12px 0;
-  line-height: 1.3em;
-  text-align: left;
-  color: #0A0A33;
-  font-weight: normal;
-}
-
-.c9 {
-  color: #0084ff;
-}
-
-.c9:hover {
-  color: #a7c3dc;
-}
-
-.c7 {
-  padding: 26px 4px;
-  width: 100%;
-  border-radius: 0;
-  box-shadow: none;
-  background-color: #FBFCFF;
-}
-
-.c11 {
-  padding: 26px 26px;
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
-  background-color: #FBFCFF;
-}
-
-.c2 {
+  .c2 {
   color: #0084ff;
 }
 
@@ -112,12 +26,8 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
 
 .c0 {
   font-family: 'Manrope',sans-serif;
-}
-
-@media (max-width:576px) {
-  .c6 {
-    grid-template-columns: 1fr;
-  }
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 @media (max-width:576px) {
@@ -168,80 +78,175 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
       </a>
     </header>
     <div>
-      <div
-        class="c4"
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App component test suite should render the performance page 1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #0084ff;
+}
+
+.c2:hover {
+  color: #a7c3dc;
+}
+
+.c1 {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 16px;
+  justify-items: center;
+}
+
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 16px;
+}
+
+.c0 {
+  font-family: 'Manrope',sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (max-width:576px) {
+  .c1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:922px) {
+  .c0 {
+    padding: 26px;
+  }
+}
+
+@media (max-width:576px) {
+  .c0 {
+    padding: 4px 4px 30px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <img
+        alt="Example"
+        src="./assets/logo-realworldone.svg"
+      />
+      <a
+        class="c2 c3"
+        href="/"
       >
-        <h1
-          class="c5"
-        >
-          Real world one
-          <strong>
-            Frontend Developer Test
-          </strong>
-        </h1>
-        <div
-          class="c6"
-        >
-          <div
-            class="c7"
-          >
-            <h2
-              class="c8"
-            >
-              Project explanation
-            </h2>
-            <h2
-              class="c8"
-            >
-              Fetching data from 
-              <a
-                class="c9"
-                href="https://www.instantwebtools.net/fake-rest-api"
-              >
-                fake-rest-api
-              </a>
-            </h2>
-            <div
-              class="c7"
-            >
-              <p
-                class="c10"
-              >
-                I choice 
-                <strong>
-                  instantwebtools
-                </strong>
-                 because there is an example where the API supports pagination. The example data loads passenger information about passengers of airlines.
-              </p>
-            </div>
-          </div>
-          <div
-            class="c11"
-          >
-            <h2
-              class="c8"
-            >
-              Tasks
-            </h2>
-            <p
-              class="c10"
-            >
-              Can see the full tasks on the PDF file:
-            </p>
-            <p
-              class="c10"
-            >
-              <a
-                class="c12"
-                download=""
-                href="./assets/instructions.pdf"
-              >
-                Download
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+        Home
+      </a>
+      <a
+        class="c2 c3"
+        href="/test"
+      >
+        Test
+      </a>
+      <a
+        class="c2 c3"
+        href="/performance"
+      >
+        Performance
+      </a>
+    </header>
+    <div>
+      <div />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`App component test suite should render the test page  1`] = `
+<DocumentFragment>
+  .c2 {
+  color: #0084ff;
+}
+
+.c2:hover {
+  color: #a7c3dc;
+}
+
+.c1 {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-column-gap: 16px;
+  justify-items: center;
+}
+
+.c3 {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  padding: 16px;
+}
+
+.c0 {
+  font-family: 'Manrope',sans-serif;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+@media (max-width:576px) {
+  .c1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:922px) {
+  .c0 {
+    padding: 26px;
+  }
+}
+
+@media (max-width:576px) {
+  .c0 {
+    padding: 4px 4px 30px;
+  }
+}
+
+<div
+    class="c0"
+  >
+    <header
+      class="c1"
+    >
+      <img
+        alt="Example"
+        src="./assets/logo-realworldone.svg"
+      />
+      <a
+        class="c2 c3"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="c2 c3"
+        href="/test"
+      >
+        Test
+      </a>
+      <a
+        class="c2 c3"
+        href="/performance"
+      >
+        Performance
+      </a>
+    </header>
+    <div>
+      <div />
     </div>
   </div>
 </DocumentFragment>

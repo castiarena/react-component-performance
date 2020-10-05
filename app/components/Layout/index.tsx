@@ -12,7 +12,7 @@ interface LayoutProps {
 const Layout: FC<LayoutProps> = styled.div<LayoutProps>`
   display: grid;
   grid-template-columns: repeat(${({ columns }) => columns}, 1fr);
-  justify-items: stretch;
+  justify-items: ${({ fitted }) => (!fitted ? 'stretch' : 'center')} ;
   grid-column-gap: ${({ gap }) => gap}px;
   ${({ responsive }) => responsive && css`
     ${media.mobile} {

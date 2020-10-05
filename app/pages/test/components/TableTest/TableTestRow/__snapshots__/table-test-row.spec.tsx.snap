@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-pNWxx iFjwNM"
+  >
+    <div
+      class="sc-bdnylx sc-kEqYlL cDeQyM gbiHYP"
+    >
+      <div
+        class="sc-gKAblj sc-fujyUd kYlZCs grzqIF"
+      >
+        <img
+          alt="Reeves airline"
+          class="sc-gtssRu sc-iCoHVE gOofrc cHbJeS"
+          src="some"
+        />
+        <p
+          class="sc-eCApGN sc-jrsJCI inMmBm kDVMpm"
+        >
+          <a
+            class="sc-jSFkmK eWscpE"
+            href="https://mr-reeves.com/"
+            target="_blank"
+          >
+            Reeves airline
+          </a>
+        </p>
+        <p
+          class="sc-eCApGN sc-jrsJCI inMmBm kDVMpm"
+        >
+          Infinity
+        </p>
+        <p
+          class="sc-eCApGN sc-jrsJCI inMmBm kDVMpm"
+        >
+          John Wick
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

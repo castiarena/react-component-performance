@@ -42,7 +42,6 @@ const BoxRow = styled(Box)`
 interface TableTestRowProps {
     data: {
         items: Passenger[];
-        toggleItemActive: () => void;
     };
     index: number;
     style: any;

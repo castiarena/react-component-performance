@@ -12,20 +12,35 @@ export const ButtonStyles = css<ButtonProps>`
         let color = theme.palette.primary;
         if (kind === 'secondary') {
             color = theme.palette[kind];
+            return css`
+              transition: background-color .2s ease-out;
+              border: 1px solid ${color.main};
+              color: ${color.main};
+              background-color: ${color.contrast};
+              &:hover {
+                color: ${color.contrast};
+                background-color: ${color.hover};
+                border: 1px solid ${color.hover};
+              }   
+            `;
         }
         return css`
+          transition: background-color .2s ease-out;
           background-color: ${color.main};
           color: ${color.contrast};
-          transition: background-color .2s ease-out;
           &:hover {
-            cursor: pointer;
             background-color: ${color.hover};
-          }
-          &:active, &:focus {
-            outline: none;
           }
         `;
     }};
+    
+    &:hover {
+      cursor: pointer;      
+    }
+    
+    &:active, &:focus {
+      outline: none;
+    }
 `;
 
 const Button = styled.button<ButtonProps>`${ButtonStyles}`;

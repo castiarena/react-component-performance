@@ -5,12 +5,10 @@ import App from './App';
 import hotModuleReplacement from './infrastructure/Development/hotModuleReplacement';
 
 const wrapper = document.getElementById('app-wrapper');
-
 ReactDom.hydrate(
     <BrowserRouter>
         <App />
     </BrowserRouter>,
     wrapper,
 );
-
 hotModuleReplacement(module);

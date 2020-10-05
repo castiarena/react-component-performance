@@ -2,20 +2,11 @@ import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import ButtonAnchor from '../../components/ButtonAnchor';
 import { Phar, Title } from '../../components/Typography';
-import passengerGateway, { Passenger } from './gateway/passenger.gateway';
 import TableTest from './components/TableTest';
+import usePassengers from './gateway/usePassengers';
 
 const Test = () => {
-    const [renderedPassengers, setRenderedPassenger] = useState([]);
-    const [quantity, setQuantity] = useState(50);
-    const [total, setTotal] = useState(0);
-
-    const fetchPassengers = async () => {
-        const { passengers, passengersCount } = await passengerGateway(quantity);
-        setRenderedPassenger(passengers);
-        setTotal(passengersCount);
-        return new Promise<Passenger[]>((resolve) => resolve(passengers));
-    };
+    const { passengers, handleLoadMorePassengers, fetchPassengers } = usePassengers();
 
     const handleClickFetchPassengers = async () => {
         await fetchPassengers();
@@ -23,14 +14,6 @@ const Test = () => {
             top: 260,
             behavior: 'smooth',
         });
-    };
-
-    const handleLoadMoreItems = async () => {
-        if (quantity >= total) {
-            return new Promise<Passenger[]>((resolve) => resolve(renderedPassengers));
-        }
-        setQuantity(quantity + 100);
-        return fetchPassengers();
     };
 
     return (
@@ -45,8 +28,8 @@ const Test = () => {
                     </ButtonAnchor>
                 </Phar>
                 <TableTest
-                    items={renderedPassengers}
-                    handleLoadMoreItems={handleLoadMoreItems}
+                    items={passengers}
+                    handleLoadMoreItems={handleLoadMorePassengers}
                 />
             </Layout>
         </Layout>

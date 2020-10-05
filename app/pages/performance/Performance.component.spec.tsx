@@ -6,11 +6,11 @@ import renderWithTheme from '../../testing-tools/renderWithTheme';
 
 describe('Performance component test suite', () => {
     it('smoke test, snapshot only ', () => {
-        const { asFragment } = renderWithTheme(
+        const { getByText } = renderWithTheme(
             <BrowserRouter>
                 <Performance />
             </BrowserRouter>,
         );
-        expect(asFragment()).toMatchSnapshot();
+        expect(getByText('Components performance measuring')).toBeDefined();
     });
 });

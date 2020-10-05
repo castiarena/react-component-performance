@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lazy load test suite should render as front 1`] = `
+<DocumentFragment>
+  .c0 {
+  padding: 26px;
+}
+
+.c1 {
+  font-size: 1em;
+  margin: 12px 0;
+  line-height: 1.3em;
+  text-align: center;
+  color: #0A0A33;
+  font-weight: normal;
+}
+
+<div
+    class="c0"
+  >
+    <p
+      class="c1"
+    >
+      loading...
+    </p>
+  </div>
+</DocumentFragment>
+`;

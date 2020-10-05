@@ -12,7 +12,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
 .c2 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  justify-items: stretch;
+  justify-items: center;
   grid-column-gap: 12px;
 }
 
@@ -20,18 +20,21 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   border: none;
   padding: 16px 30px;
   border-radius: 10px;
-  background-color: #0084ff;
-  color: #fff;
   -webkit-transition: background-color .2s ease-out;
   transition: background-color .2s ease-out;
+  background-color: #0084ff;
+  color: #fff;
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .c8:hover {
-  cursor: pointer;
   background-color: #a7c3dc;
+}
+
+.c8:hover {
+  cursor: pointer;
 }
 
 .c8:active,

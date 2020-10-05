@@ -6,15 +6,18 @@ exports[`Button test suite should render a primary button as default 1`] = `
   border: none;
   padding: 16px 30px;
   border-radius: 10px;
-  background-color: #0084ff;
-  color: #fff;
   -webkit-transition: background-color .2s ease-out;
   transition: background-color .2s ease-out;
+  background-color: #0084ff;
+  color: #fff;
+}
+
+.c0:hover {
+  background-color: #a7c3dc;
 }
 
 .c0:hover {
   cursor: pointer;
-  background-color: #a7c3dc;
 }
 
 .c0:active,
@@ -36,15 +39,21 @@ exports[`Button test suite should render a primary button as default 2`] = `
   border: none;
   padding: 16px 30px;
   border-radius: 10px;
-  background-color: #709fb0;
-  color: #fff;
   -webkit-transition: background-color .2s ease-out;
   transition: background-color .2s ease-out;
+  border: 1px solid #709fb0;
+  color: #709fb0;
+  background-color: #fff;
+}
+
+.c0:hover {
+  color: #fff;
+  background-color: #84bcd0;
+  border: 1px solid #84bcd0;
 }
 
 .c0:hover {
   cursor: pointer;
-  background-color: #84bcd0;
 }
 
 .c0:active,
