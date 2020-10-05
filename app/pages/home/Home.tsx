@@ -12,26 +12,32 @@ const Home = () => (
             Real world one
             <strong>Frontend Developer Test</strong>
         </Title>
-        <Layout columns={2} gap={12} responsive>
-            <Box>
+        <Layout columns={2} gap={12} responsive fitted>
+            <Box fitted>
                 <SubTitle bold>
-                    Prerequisites
+                    Project explanation
                 </SubTitle>
-                <Phar>
-                    Choose any JSON dummy data online generator. This will be your data source
-                    that will be used within your application (so called Test Data).
-                </Phar>
-                <Phar>
-                    The Test Data size should be at least 500 records.
-                    e.g.
-                    <Link href="https://jsonplaceholder.typicode.com/comments" target="_blank">
-                        https://jsonplaceholder.typicode.com/comments
-                    </Link>
-                </Phar>
+                <SubTitle bold>
+                    Fetching data from
+                    {' '}
+                    <Link href="https://www.instantwebtools.net/fake-rest-api">fake-rest-api</Link>
+                </SubTitle>
+                <Box fitted>
+                    <Phar>
+                        I choice
+                        {' '}
+                        <strong>instantwebtools</strong>
+                        {' '}
+                        because there is an example where the API supports pagination.
+                        The example data loads passenger information about passengers of airlines.
+                    </Phar>
+                </Box>
             </Box>
             <Box shadow>
                 <SubTitle bold>Tasks</SubTitle>
-                Can see the full tasks on the PDF file:
+                <Phar>
+                    Can see the full tasks on the PDF file:
+                </Phar>
                 <Phar>
                     <ButtonAnchor href="./assets/instructions.pdf" download>Download</ButtonAnchor>
                 </Phar>

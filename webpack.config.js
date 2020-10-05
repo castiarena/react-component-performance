@@ -1,3 +1,4 @@
+const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -19,6 +20,9 @@ const configs = [
         },
         // Currently we need to add '.ts' to the resolve.extensions array.
         resolve: {
+            alias: {
+                app: path.resolve(__dirname, 'app/'),
+            },
             extensions: ['.ts', '.tsx', '.js', '.jsx'],
         },
 

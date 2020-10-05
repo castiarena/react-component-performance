@@ -5,8 +5,8 @@ exports[`Performance component test suite smoke test, snapshot only  1`] = `
   .c0 {
   display: grid;
   grid-template-columns: repeat(1,1fr);
+  justify-items: stretch;
   grid-column-gap: 40px;
-  padding: 20px;
 }
 
 .c1 {

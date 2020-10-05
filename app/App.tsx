@@ -7,9 +7,16 @@ import Home from './pages/home/Home';
 import Test from './pages/test/Test';
 import Performance from './pages/performance/Performance';
 import Header from './components/Header';
+import media from './components/Layout/MediaQueries';
 
 const MainWrapper = styled.div`
     font-family: 'Manrope', sans-serif;
+    ${media.desktop}{
+        padding: ${({ theme }) => theme.spacing.medium};
+    }
+    ${media.mobile}{
+        padding: ${({ theme }) => `${theme.spacing.tiny} ${theme.spacing.tiny} ${theme.spacing.large}`} ;
+    }
 `;
 
 const GlobalStyles = createGlobalStyle`

@@ -8,6 +8,7 @@ const customTheme: DefaultTheme = {
         large: '24px',
     },
     spacing: {
+        tiny: '4px',
         smaller: '12px',
         small: '16px',
         medium: '26px',

@@ -5,15 +5,15 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   .c4 {
   display: grid;
   grid-template-columns: repeat(1,1fr);
+  justify-items: stretch;
   grid-column-gap: 40px;
-  padding: 20px;
 }
 
 .c6 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  justify-items: stretch;
   grid-column-gap: 12px;
-  padding: 6px;
 }
 
 .c12 {
@@ -55,7 +55,7 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   font-weight: bold;
 }
 
-.c9 {
+.c10 {
   font-size: 1em;
   margin: 12px 0;
   line-height: 1.3em;
@@ -64,23 +64,25 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
   font-weight: normal;
 }
 
-.c10 {
+.c9 {
   color: #0084ff;
 }
 
-.c10:hover {
+.c9:hover {
   color: #a7c3dc;
 }
 
 .c7 {
-  padding: 26px;
-  border-radius: none;
+  padding: 26px 4px;
+  width: 100%;
+  border-radius: 0;
   box-shadow: none;
   background-color: #FBFCFF;
 }
 
 .c11 {
-  padding: 26px;
+  padding: 26px 26px;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
   background-color: #FBFCFF;
@@ -121,6 +123,18 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
 @media (max-width:576px) {
   .c1 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width:922px) {
+  .c0 {
+    padding: 26px;
+  }
+}
+
+@media (max-width:576px) {
+  .c0 {
+    padding: 4px 4px 30px;
   }
 }
 
@@ -174,25 +188,32 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
             <h2
               class="c8"
             >
-              Prerequisites
+              Project explanation
             </h2>
-            <p
-              class="c9"
+            <h2
+              class="c8"
             >
-              Choose any JSON dummy data online generator. This will be your data source that will be used within your application (so called Test Data).
-            </p>
-            <p
-              class="c9"
-            >
-              The Test Data size should be at least 500 records. e.g.
+              Fetching data from 
               <a
-                class="c10"
-                href="https://jsonplaceholder.typicode.com/comments"
-                target="_blank"
+                class="c9"
+                href="https://www.instantwebtools.net/fake-rest-api"
               >
-                https://jsonplaceholder.typicode.com/comments
+                fake-rest-api
               </a>
-            </p>
+            </h2>
+            <div
+              class="c7"
+            >
+              <p
+                class="c10"
+              >
+                I choice 
+                <strong>
+                  instantwebtools
+                </strong>
+                 because there is an example where the API supports pagination. The example data loads passenger information about passengers of airlines.
+              </p>
+            </div>
           </div>
           <div
             class="c11"
@@ -202,9 +223,13 @@ exports[`App component test suite smoke test, snapshot only  1`] = `
             >
               Tasks
             </h2>
-            Can see the full tasks on the PDF file:
             <p
-              class="c9"
+              class="c10"
+            >
+              Can see the full tasks on the PDF file:
+            </p>
+            <p
+              class="c10"
             >
               <a
                 class="c12"

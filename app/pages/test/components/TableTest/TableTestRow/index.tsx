@@ -18,20 +18,52 @@ const RowLayout = styled(Layout)`
   align-items: center;
 `;
 
-const TableTestRow = ({ data, index, style }: any) => {
-    const { items, toggleItemActive } = data;
-    const { name, trips, airline } : Passenger = items[index];
+const Wrapper = styled.div`
+  padding: ${({ theme }) => `${theme.spacing.smaller} ${theme.spacing.tiny}`};
+`;
+
+const PharRow = styled(Phar)`
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+`;
+
+const BoxRow = styled(Box)`
+  min-height: 100%;
+  display: grid;
+  transition: background-color .2s linear;
+  &:hover {
+    cursor:pointer;
+    background-color: ${({ theme }) => theme.palette.common.gray};
+  }
+`;
+
+interface TableTestRowProps {
+    data: {
+        items: Passenger[];
+        toggleItemActive: () => void;
+    };
+    index: number;
+    style: any;
+}
+
+const TableTestRow = ({ data, index, style } : TableTestRowProps) => {
+    const { items } = data;
+    const { name, trips, airline } = items[index];
     return (
-        <Box style={style}>
-            <Box shadow>
+        <Wrapper style={style}>
+            <BoxRow shadow fitted>
                 <RowLayout columns={4} gap={8}>
                     <AirlineLogo src={airline.logo} alt={airline.name} />
-                    <Link href={airline.website} target="_blank">{airline.name}</Link>
-                    <Phar bold>{trips}</Phar>
-                    <Phar bold>{name}</Phar>
+                    <PharRow bold align="center">
+                        <Link href={airline.website} target="_blank">{airline.name}</Link>
+                    </PharRow>
+                    <PharRow bold align="center">{trips}</PharRow>
+                    <PharRow bold align="center">{name}</PharRow>
                 </RowLayout>
-            </Box>
-        </Box>
+            </BoxRow>
+        </Wrapper>
     );
 };
 

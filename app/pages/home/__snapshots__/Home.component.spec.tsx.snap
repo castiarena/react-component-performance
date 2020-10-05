@@ -5,15 +5,15 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   .c0 {
   display: grid;
   grid-template-columns: repeat(1,1fr);
+  justify-items: stretch;
   grid-column-gap: 40px;
-  padding: 20px;
 }
 
 .c2 {
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  justify-items: stretch;
   grid-column-gap: 12px;
-  padding: 6px;
 }
 
 .c8 {
@@ -55,7 +55,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   font-weight: bold;
 }
 
-.c5 {
+.c6 {
   font-size: 1em;
   margin: 12px 0;
   line-height: 1.3em;
@@ -64,23 +64,25 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   font-weight: normal;
 }
 
-.c6 {
+.c5 {
   color: #0084ff;
 }
 
-.c6:hover {
+.c5:hover {
   color: #a7c3dc;
 }
 
 .c3 {
-  padding: 26px;
-  border-radius: none;
+  padding: 26px 4px;
+  width: 100%;
+  border-radius: 0;
   box-shadow: none;
   background-color: #FBFCFF;
 }
 
 .c7 {
-  padding: 26px;
+  padding: 26px 26px;
+  width: 100%;
   border-radius: 20px;
   box-shadow: 0 4px 12px -1px rgba(0,0,0,.1);
   background-color: #FBFCFF;
@@ -112,25 +114,32 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
         <h2
           class="c4"
         >
-          Prerequisites
+          Project explanation
         </h2>
-        <p
-          class="c5"
+        <h2
+          class="c4"
         >
-          Choose any JSON dummy data online generator. This will be your data source that will be used within your application (so called Test Data).
-        </p>
-        <p
-          class="c5"
-        >
-          The Test Data size should be at least 500 records. e.g.
+          Fetching data from 
           <a
-            class="c6"
-            href="https://jsonplaceholder.typicode.com/comments"
-            target="_blank"
+            class="c5"
+            href="https://www.instantwebtools.net/fake-rest-api"
           >
-            https://jsonplaceholder.typicode.com/comments
+            fake-rest-api
           </a>
-        </p>
+        </h2>
+        <div
+          class="c3"
+        >
+          <p
+            class="c6"
+          >
+            I choice 
+            <strong>
+              instantwebtools
+            </strong>
+             because there is an example where the API supports pagination. The example data loads passenger information about passengers of airlines.
+          </p>
+        </div>
       </div>
       <div
         class="c7"
@@ -140,9 +149,13 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
         >
           Tasks
         </h2>
-        Can see the full tasks on the PDF file:
         <p
-          class="c5"
+          class="c6"
+        >
+          Can see the full tasks on the PDF file:
+        </p>
+        <p
+          class="c6"
         >
           <a
             class="c8"

@@ -1,66 +1,52 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import ButtonAnchor from '../../components/ButtonAnchor';
-import { Phar, SubTitle, Title } from '../../components/Typography';
-import Box from '../../components/Box';
-import Link from '../../components/Link';
+import { Phar, Title } from '../../components/Typography';
 import passengerGateway, { Passenger } from './gateway/passenger.gateway';
-import InputText from '../../components/InputText';
 import TableTest from './components/TableTest';
 
 const Test = () => {
     const [renderedPassengers, setRenderedPassenger] = useState([]);
     const [quantity, setQuantity] = useState(50);
-    const [page, setPage] = useState(1);
+    const [total, setTotal] = useState(0);
 
-    const handleOnFetchPassengers = async () => {
-        const { passengers } = await passengerGateway(quantity, page);
+    const fetchPassengers = async () => {
+        const { passengers, passengersCount } = await passengerGateway(quantity);
         setRenderedPassenger(passengers);
+        setTotal(passengersCount);
         return new Promise<Passenger[]>((resolve) => resolve(passengers));
     };
 
-    const handleLoadMoreItems = async () => {
-        setQuantity(quantity + 100);
-        return handleOnFetchPassengers();
+    const handleClickFetchPassengers = async () => {
+        await fetchPassengers();
+        window.scrollTo({
+            top: 260,
+            behavior: 'smooth',
+        });
     };
 
-    const handleOnChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-        setQuantity(Number(target.value));
+    const handleLoadMoreItems = async () => {
+        if (quantity >= total) {
+            return new Promise<Passenger[]>((resolve) => resolve(renderedPassengers));
+        }
+        setQuantity(quantity + 100);
+        return fetchPassengers();
     };
 
     return (
         <Layout columns={1} gap={40}>
             <Title align="center" bold>
-                Test data
+                Passengers fake data rendered
             </Title>
-            <Box>
-                <SubTitle bold>
-                    Fetching data from
-                    {' '}
-                    <Link href="https://www.instantwebtools.net/fake-rest-api">https://www.instantwebtools.net/fake-rest-api</Link>
-                </SubTitle>
-                <Box>
-                    <Phar>
-                        I choice
-                        {' '}
-                        <strong>instantwebtools</strong>
-                        {' '}
-                        because there is an example where the API supports pagination.
-                        The example data loads passenger information about passengers of airlines.
-                    </Phar>
-                    <Box size="smaller">
-                        <ButtonAnchor onClick={handleOnFetchPassengers}>
-                            Fetch passengers
-                        </ButtonAnchor>
-                        <InputText defaultValue={quantity} onInput={handleOnChange} />
-                    </Box>
-                </Box>
-            </Box>
             <Layout columns={1} gap={10}>
+                <Phar align="center">
+                    <ButtonAnchor onClick={handleClickFetchPassengers}>
+                        Fetch passengers
+                    </ButtonAnchor>
+                </Phar>
                 <TableTest
                     items={renderedPassengers}
                     handleLoadMoreItems={handleLoadMoreItems}
-                    toggleItemActive={() => alert()}
                 />
             </Layout>
         </Layout>

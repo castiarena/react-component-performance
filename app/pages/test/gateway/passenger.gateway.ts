@@ -21,9 +21,9 @@ interface PassengerGatewayResponse {
     pages: number;
     passengersCount: number;
 }
-const passengerGateway = async (size: number, page: number): Promise<PassengerGatewayResponse> => {
+const passengerGateway = async (size: number): Promise<PassengerGatewayResponse> => {
     const data = await fetch(
-        `https://api.instantwebtools.net/v1/passenger?size=${size}&page=${page}`,
+        `https://api.instantwebtools.net/v1/passenger?size=${size}`,
     );
     const response = await data.json();
     return {
