@@ -120,7 +120,7 @@
       "bash -t tsc --noEmit",
       "bash -t prettier --write --ignore-unknown",
       "bash -t eslint --fix",
-      "bash -t yarn test"
+      "yarn test"
     ]
   }
 }
