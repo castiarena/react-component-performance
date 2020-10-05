@@ -25,6 +25,7 @@ const Html: React.FC<HtmlElementProps> = ({
             />
             <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
             <title>{title}</title>
+            <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
             <link
                 href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;800&display=swap"
                 rel="stylesheet"
