@@ -1,4 +1,3 @@
-
 export interface Sizes {
     smaller: string;
     small: string;

@@ -10,6 +10,9 @@ before hand you need those dependencies:
 
 - node > 10
 - npm 
+- yarn
+
+> In order to get yarn globally simply run `npm install --global yarn` or `npm i -g yarn`
 
 ```bash
 yarn install

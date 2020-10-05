@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import Box from '../Box';
+import media from '../Layout/MediaQueries';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -9,6 +10,12 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 40%;
+  ${media.mobile} {
+    width: 100%;  
+    top: 0;
+    transform: translate(-50%, 0);
+    position: fixed;
+  }
 `;
 
 const FixedStyled = styled.div`

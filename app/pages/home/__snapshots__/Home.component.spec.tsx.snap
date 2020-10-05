@@ -16,7 +16,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   grid-column-gap: 12px;
 }
 
-.c8 {
+.c9 {
   border: none;
   padding: 16px 30px;
   border-radius: 10px;
@@ -29,17 +29,33 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   text-decoration: none;
 }
 
-.c8:hover {
+.c9:hover {
   background-color: #a7c3dc;
 }
 
-.c8:hover {
+.c9:hover {
   cursor: pointer;
 }
 
-.c8:active,
-.c8:focus {
+.c9:active,
+.c9:focus {
   outline: none;
+}
+
+.c6 {
+  color: #0084ff;
+}
+
+.c6:hover {
+  color: #a7c3dc;
+}
+
+.c7 {
+  color: #0084ff;
+}
+
+.c7:hover {
+  color: #a7c3dc;
 }
 
 .c1 {
@@ -58,21 +74,13 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   font-weight: bold;
 }
 
-.c6 {
+.c5 {
   font-size: 1em;
   margin: 12px 0;
   line-height: 1.3em;
   text-align: left;
   color: #0A0A33;
   font-weight: normal;
-}
-
-.c5 {
-  color: #0084ff;
-}
-
-.c5:hover {
-  color: #a7c3dc;
 }
 
 .c3 {
@@ -83,7 +91,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
   background-color: #FBFCFF;
 }
 
-.c7 {
+.c8 {
   padding: 26px 26px;
   width: 100%;
   border-radius: 20px;
@@ -103,10 +111,7 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
     <h1
       class="c1"
     >
-      Real world one
-      <strong>
-        Frontend Developer Test
-      </strong>
+      Frontend Developer Test
     </h1>
     <div
       class="c2"
@@ -117,35 +122,44 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
         <h2
           class="c4"
         >
-          Project explanation
+          Test explanation
         </h2>
-        <h2
-          class="c4"
+        <p
+          class="c5"
         >
-          Fetching data from 
+          The first requirement was create a SPA with 3 pages, I took the decision to do it as an hybrid application in order to manage the first render of each one of these pages solving on that way the second point also.
+        </p>
+        <p
+          class="c5"
+        >
+          This is the first page, on the header are the 3 links for each page, all handled as SPA and the first render resolved by express application with SSR from react side.
+        </p>
+        <p
+          class="c5"
+        >
+          The second page got the representation of the data selected, this data is came from the following API 
           <a
-            class="c5"
+            class="c6"
             href="https://www.instantwebtools.net/fake-rest-api"
           >
             fake-rest-api
           </a>
-        </h2>
-        <div
-          class="c3"
+          . I took the decision to use this option because there is an example where the API supports sizing, so on the example I add a infinite scroll playing with that size.
+        </p>
+        <p
+          class="c5"
         >
-          <p
-            class="c6"
+          Finally on the third page you would find the performance of the component who deal with this infinite scroll and the timings of response of the API. All the values are in milliseconds. And for environments reasons in order to see that information you should download the repository and run it locally. More details onç 
+          <a
+            class="c7"
+            href="/performance"
           >
-            I choice 
-            <strong>
-              instantwebtools
-            </strong>
-             because there is an example where the API supports pagination. The example data loads passenger information about passengers of airlines.
-          </p>
-        </div>
+            performance page.
+          </a>
+        </p>
       </div>
       <div
-        class="c7"
+        class="c8"
       >
         <h2
           class="c4"
@@ -153,15 +167,15 @@ exports[`Home component test suite smoke test, snapshot only  1`] = `
           Tasks
         </h2>
         <p
-          class="c6"
+          class="c5"
         >
           Can see the full tasks on the PDF file:
         </p>
         <p
-          class="c6"
+          class="c5"
         >
           <a
-            class="c8"
+            class="c9"
             download=""
             href="./assets/instructions.pdf"
           >

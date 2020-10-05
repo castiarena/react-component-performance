@@ -56,7 +56,7 @@ const TableTestRow = ({ data, index, style } : TableTestRowProps) => {
                 <RowLayout columns={4} gap={8}>
                     <AirlineLogo src={airline.logo} alt={airline.name} />
                     <PharRow bold align="center">
-                        <Link href={airline.website} target="_blank">{airline.name}</Link>
+                        <Link href={`https://${airline.website}`} target="_blank">{airline.name}</Link>
                     </PharRow>
                     <PharRow bold align="center">{trips}</PharRow>
                     <PharRow bold align="center">{name}</PharRow>

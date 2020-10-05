@@ -1,7 +1,7 @@
 import React from 'react';
 import TableTestRow from '.';
 import renderWithTheme from '../../../../../testing-tools/renderWithTheme';
-import {Passenger} from '../../../gateway/passenger.gateway';
+import { Passenger } from '../../../gateway/passenger.gateway';
 
 describe('', () => {
     it('', () => {

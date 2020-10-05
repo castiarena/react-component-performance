@@ -8,6 +8,8 @@ import Box from '../../components/Box';
 import FixedBox from '../../components/FixedBox';
 import usePerformanceMetrics from './usePerformanceMetrics';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 const Performance = () => {
     const {
         passengers, handleLoadMorePassengers, fetchPassengers, passengerDuration,
@@ -30,7 +32,7 @@ const Performance = () => {
             <Title align="center" bold>
                 Components performance measuring
             </Title>
-            {showPerformance
+            {(showPerformance && isDevelopment)
             && (
                 <FixedBox>
                     <SubTitle bold ref={name} />
@@ -45,31 +47,66 @@ const Performance = () => {
                 </FixedBox>
             )}
             <Layout columns={1} gap={10}>
-                <Layout columns={2} gap={10}>
-                    <Box fitted>
-                        <Phar>With the next button you can fetch the data from the API</Phar>
-                        <ButtonAnchor onClick={handleClickFetchPassengers}>
-                            Fetch it!
-                        </ButtonAnchor>
-                    </Box>
+                { !isDevelopment && (
+                    <Layout columns={2} gap={10} fitted>
+                        <Box>
+                            <SubTitle>Performance viewing</SubTitle>
+                            <Phar>
+                                In order to see the performance metrics running you should
+                                follow the steps on the repository and run it locally,
+                                on development mode.
+                            </Phar>
+                            <ButtonAnchor href="https://github.com/castiarena/react-component-performance" target="_blank">
+                                Repo
+                            </ButtonAnchor>
+                        </Box>
+                        <Box shadow>
+                            <SubTitle>Direct download</SubTitle>
+                            <Phar>
+                                Download here the repository via https
+                            </Phar>
+                            <ButtonAnchor
+                                href="https://github.com/castiarena/react-component-performance.git"
+                                download
+                                kind="secondary"
+                            >
+                                Repo
+                            </ButtonAnchor>
+                        </Box>
+                    </Layout>
+                )}
+                { isDevelopment && (
+                    <>
+                        <Layout columns={2} gap={10} responsive>
+                            <Box fitted>
+                                <Phar>
+                                    With the next button you can fetch the data from the API
+                                </Phar>
+                                <ButtonAnchor onClick={handleClickFetchPassengers}>
+                                    Fetch it!
+                                </ButtonAnchor>
+                            </Box>
 
-                    <Box fitted>
-                        <Phar>
-                            And whit this button you can see the performance metrics of the  first,
-                            render and the repainting on each update, by using React.Profiler
-                            component.
-                        </Phar>
-                        <ButtonAnchor onClick={handleClickShowPerformance} kind="secondary">
-                            Toggle performance tab
-                        </ButtonAnchor>
-                    </Box>
-                </Layout>
-                <Profiler id="Passengers" onRender={handlerRenderProfiler}>
-                    <TableTest
-                        items={passengers}
-                        handleLoadMoreItems={handleLoadMorePassengers}
-                    />
-                </Profiler>
+                            <Box fitted>
+                                <Phar>
+                                    And whit this button you can see the performance
+                                    metrics of the  first, render and the repainting
+                                    on each update, by using React.Profiler
+                                    component.
+                                </Phar>
+                                <ButtonAnchor onClick={handleClickShowPerformance} kind="secondary">
+                                    Toggle performance tab
+                                </ButtonAnchor>
+                            </Box>
+                        </Layout>
+                        <Profiler id="Passengers" onRender={handlerRenderProfiler}>
+                            <TableTest
+                                items={passengers}
+                                handleLoadMoreItems={handleLoadMorePassengers}
+                            />
+                        </Profiler>
+                    </>
+                )}
             </Layout>
         </Layout>
     );
