@@ -49,7 +49,7 @@ const Performance = () => {
             )}
             <Layout columns={1} gap={10}>
                 {!isDevelopment && (
-                    <Layout columns={2} gap={10} fitted>
+                    <Layout columns={2} gap={10} fitted responsive>
                         <Box>
                             <SubTitle>Performance viewing</SubTitle>
                             <Phar>

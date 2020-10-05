@@ -1,7 +1,7 @@
 # React component performance
 
 Isomorphic React application build on Typescript and mounted on NodeJs with
-SSR and state management with Redux. For CSS loading styled-components.
+SSR. For CSS loading styled-components.
 
 ## Pre-requisites
 
