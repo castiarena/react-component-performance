@@ -27,7 +27,7 @@ const Performance = () => {
     };
 
     const handleClickShowPerformance = () => {
-        setShowPerformance(!showPerformance);
+        setShowPerformance(() => !showPerformance);
     };
 
     return (

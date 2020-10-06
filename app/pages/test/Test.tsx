@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../../components/Layout';
 import ButtonAnchor from '../../components/ButtonAnchor';
 import { Phar, Title } from '../../components/Typography';
@@ -27,10 +27,7 @@ const Test = () => {
                         Fetch passengers
                     </ButtonAnchor>
                 </Phar>
-                <TableTest
-                    items={passengers}
-                    handleLoadMoreItems={handleLoadMorePassengers}
-                />
+                <TableTest items={passengers} handleLoadMoreItems={handleLoadMorePassengers} />
             </Layout>
         </Layout>
     );

@@ -10,9 +10,7 @@ interface LazyLoadProps {
 
 const LazyLoading = () => (
     <Loading>
-        <Phar align="center">
-            loading...
-        </Phar>
+        <Phar align="center">loading...</Phar>
     </Loading>
 );
 
@@ -21,7 +19,7 @@ const LazyLoad: FC<LazyLoadProps> = ({ importComponent }) => {
     const LazyComponent = lazy(importComponent);
 
     useEffect(() => {
-        process.nextTick(() => setIsFront(!!globalThis.window));
+        process.nextTick(() => setIsFront(() => !!globalThis.window));
     }, [isFront]);
 
     if (!isFront) {

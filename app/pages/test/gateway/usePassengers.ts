@@ -8,12 +8,12 @@ const usePassengers = () => {
     const [duration, setDuration] = useState(0);
 
     const fetchPassengers = async () => {
-        const {
-            passengers, passengersCount, passengerRequestTime,
-        } = await passengerGateway(quantity);
-        setRenderedPassenger(passengers);
-        setTotal(passengersCount);
-        setDuration(passengerRequestTime);
+        const { passengers, passengersCount, passengerRequestTime } = await passengerGateway(
+            quantity,
+        );
+        setRenderedPassenger(() => passengers);
+        setTotal(() => passengersCount);
+        setDuration(() => passengerRequestTime);
         return new Promise<Passenger[]>((resolve) => resolve(passengers));
     };
 
@@ -21,7 +21,7 @@ const usePassengers = () => {
         if (quantity >= total) {
             return new Promise<Passenger[]>((resolve) => resolve(renderedPassengers));
         }
-        setQuantity(quantity + 100);
+        setQuantity(() => quantity + 100);
         return fetchPassengers();
     };
 
